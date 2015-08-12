@@ -122,10 +122,12 @@
 
         <h3>Receive mentorship and resources</h3>
         <p>Plus, we'll make you a promo video if selected.</p>
+
       </div>
 
       <div class='col-md-4 col-md-offset-2 pitch-who'>
         <h2>Who</h2>
+
         <h3>Individual or small team</h3>
         <p>You're an artist, researcher, or maker with a big idea.</p>
 
@@ -134,22 +136,22 @@
 
         <h3>Social enterprise</h3>
         <p>You want to engage your community and give back.</p>
+
       </div>
     </div>
 
     <div class='row'>
       <div class='col-md-12'>
-        <div class='submit-btn-container'>
-          <button class='submit-idea-btn btn btn-lg btn-primary' data-toggle="modal" data-target="#pitch-modal">
-            Submit your idea
-          </a>
-        </div>
+        <p class="under-review-text">
+          Applications are currently under review.<br>
+          Check out <a href="#dates-section">important upcoming dates</a> below.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section class='landing-section landing-dates'>
+<section id="dates-section" class='landing-section landing-dates'>
   <div class='container'>
     <div class='landing-section-heading'>
       <h1>Important Dates</h1>
@@ -237,8 +239,6 @@
     </div>
   </div>
 </section>
-
-<%= render 'pages/pitch_modal' %>
 
 <% content_for :scripts do %>
   <%= javascript_tag do %>

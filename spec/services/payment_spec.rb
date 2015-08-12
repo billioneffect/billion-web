@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe Payment do
   describe '.pay' do
-
     it 'returns true if nonce is valid' do
       expect(Payment.new('fake-valid-nonce', 2).pay).to eql(true)
     end
@@ -31,7 +30,6 @@ describe Payment do
       Braintree::UnexpectedError,
       Braintree::UpgradeRequiredError
     ].each do |braintree_error|
-
       it "raises PaymentServiceError when Braintree encounter a #{braintree_error.name}" do
         nonce = 'fake-valid-nonce'
         amount = 2
@@ -51,6 +49,5 @@ describe Payment do
         .and_raise(Braintree::ConfigurationError.new('setting', 'message'))
       expect { Payment.new(nonce, amount).pay }.to raise_error(Payment::PaymentServiceError)
     end
-
   end
 end

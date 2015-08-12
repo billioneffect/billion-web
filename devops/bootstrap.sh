@@ -28,6 +28,9 @@ curl -sSL https://get.rvm.io | sudo bash -s stable --ruby=2.1.2
 echo "------------ Source RVM ------------------------------------------------"
 source /usr/local/rvm/scripts/rvm
 
+echo "------------ Install ImageMagick ---------------------------------------"
+sudo apt-get install -y imagemagick 
+
 echo "------------ Install Dependencies --------------------------------------"
 sudo apt-get install -y apache2 apache2-dev libcurl4-gnutls-dev libapache2-svn libapache-dbi-perl libapache2-mod-perl2 libdbd-pg-perl libauthen-simple-ldap-perl openssl
 

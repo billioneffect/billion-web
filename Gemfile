@@ -12,10 +12,13 @@ gem 'lodash-rails', '~> 3.7.0'
 gem 'devise', '~> 3.5.1'
 gem 'devise_invitable', '~> 1.5.1'
 gem 'braintree', '~> 2.45.0'
+gem 'rails_admin', '~> 0.6.8'
+gem 'rails_admin_pundit', github: 'sudosu/rails_admin_pundit'
 gem 'animate-rails', '~> 1.0.8'
 gem 'jquery-validation-rails', '~> 1.13.1'
 gem 'pundit', '~> 1.0.1'
 gem 'faker', '~> 1.4.3'
+gem 'paperclip', '~> 4.3.0'
 
 # Rails-specific gems
 gem 'rails', '4.2.0'

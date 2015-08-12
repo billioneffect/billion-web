@@ -200,6 +200,11 @@
       color: lighten($background, 10%);
       padding: 1em 2em;
     }
+
+    .under-review-text {
+      text-align: center;
+      margin-top: $grid-gutter-width;
+    }
   }
 
   &-dates {

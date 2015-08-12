@@ -6,12 +6,18 @@ class ApplicationPolicy
     @record = record
   end
 
+  # rubocop:disable MethodLength
+  def rails_admin?(action)
+    actions = %i(dashboard index show new edit destroy export delete show_in_app bulk_delete)
+    actions.include?(action) && user.admin?
+  end
+
   def index?
     false
   end
 
   def show?
-    scope.where(id: 'record.id').exists?
+    scope.where(id: record.id).exists?
   end
 
   def create?

@@ -42,4 +42,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.web_console.whitelisted_ips = '192.168.60.66'
+
+  Paperclip.options[:command_path] = '/usr/bin/'
 end
