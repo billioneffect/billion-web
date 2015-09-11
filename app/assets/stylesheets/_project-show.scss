@@ -60,20 +60,22 @@
     background-color: $white;
     padding: ($grid-gutter-width / 2) 0 $grid-gutter-width;
 
+    $base-line-height: ms(2);
+
     h1 {
       font-size: ms(1);
       font-weight: bold;
-      line-height: 2.5em;
-      margin: 1.5em 0 0.5em;
+      line-height: $base-line-height;
+      margin: $base-line-height * 1.5 0 $base-line-height * 0.5;
     }
 
     p, li {
       font-size: ms(0);
-      line-height: 1.75em;
+      line-height: $base-line-height;
     }
 
     p, ul, ol {
-      margin-bottom: 1em;
+      margin-bottom: $base-line-height;
     }
 
     img {
@@ -84,12 +86,11 @@
     }
 
     .project-team-member {
-      margin-bottom: $grid-gutter-width;
 
-      h1 {
+      .collaborator-name {
         font-size: ms(0);
-        line-height: 2em;
-        margin: 0;
+        font-weight: bold;
+        line-height: $base-line-height;
       }
 
       img {

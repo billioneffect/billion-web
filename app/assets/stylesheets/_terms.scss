@@ -20,6 +20,10 @@
   }
 
   &-contact {
+    h1 {
+      font-weight: bold;
+      font-size: ms(2);
+    }
     background-color: $orange;
     padding: $grid-gutter-width 0;
   }
