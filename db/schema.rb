@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221040025) do
+ActiveRecord::Schema.define(version: 20160718052859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(version: 20160221040025) do
   add_index "comments", ["project_id"], name: "index_comments_on_project_id", using: :btree
 
   create_table "competitions", force: :cascade do |t|
-    t.string   "code_name",     default: "",   null: false
-    t.date     "start_date",                   null: false
-    t.date     "end_date",                     null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "open_donation", default: true, null: false
+    t.string   "code_name",       default: "",   null: false
+    t.date     "start_date",                     null: false
+    t.date     "end_date",                       null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "dollar_to_point", default: 1,    null: false
+    t.boolean  "open_donation",   default: true, null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -70,18 +71,19 @@ ActiveRecord::Schema.define(version: 20160221040025) do
   add_index "memberships", ["user_id"], name: "index_memberships_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.string   "name",              default: "", null: false
+    t.string   "name",              default: "",    null: false
     t.text     "blurb"
     t.text     "description"
-    t.integer  "competition_id",                 null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.integer  "competition_id",                    null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "video_url"
     t.string   "card_image_url"
     t.string   "project_image_url"
     t.string   "short_name"
     t.string   "slug"
     t.datetime "eliminated_at"
+    t.boolean  "wine",              default: false, null: false
   end
 
   add_index "projects", ["competition_id"], name: "index_projects_on_competition_id", using: :btree
