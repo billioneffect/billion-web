@@ -34,19 +34,14 @@
           <span class='dollar-container'>
             <%= f.text_field :amount, value: '1.00',
               class: 'amount-field inline-form-field',
-              data: { 'a-sign' => '$', 'v-max' => '50000' },
+              data: { 'a-sign' => '$', 'v-max' => '100' },
               required: true
             %>
           </span>
 
           to the <%= link_to 'Billion&nbsp;Fund'.html_safe, story_path, target: '_blank' %>, <br/>
 
-          giving
-          <span class='point-container'>
-            <span class='point-value'><%= TransactionsController::DOLLAR_TO_POINT %></span>
-            <span class='point-unit'>points</span>
-          </span>
-          to
+          in support of
 
           <%= f.collection_select :recipient_id, @projects, :id, :name, { prompt: '...' },
             class: 'project-select inline-form-field',
@@ -98,6 +93,10 @@
             <div class='form-group'>
               <%= f.submit 'Donate', disabled_with: 'Please wait...', class: 'btn btn-large btn-block btn-primary' %>
             </div>
+
+            <a href="https://www.braintreegateway.com/merchants/<%= ENV['BRAINTREE_MERCHANT_ID'] %>/verified" target="_blank">
+              <img src="https://s3.amazonaws.com/braintree-badges/braintree-badge-wide-light.png" width="280px" height ="44px" border="0"/>
+            </a>
           </div>
         </div>
       </div>
@@ -109,7 +108,7 @@
   <script src="https://js.braintreegateway.com/js/beta/braintree-hosted-fields-beta.18.min.js"></script>
   <script>
 $(document).ready(function() {
-  new DonationForm('#new_transaction', '<%= Braintree::ClientToken.generate %>', <%= TransactionsController::DOLLAR_TO_POINT %>)
+  new DonationForm('#new_transaction', '<%= Braintree::ClientToken.generate %>', <%= @competition.dollar_to_point %>)
 });
   </script>
 <% end %>

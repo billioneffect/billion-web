@@ -1,7 +1,17 @@
-<section class='landing-section landing-movements' id='landing-movements'>
-  <% if @competition.active_round.present? %>
-    <%= render 'pages/landing_sections/landing_bracket' %>
-  <% else %>
-    <%= render 'pages/landing_sections/landing_projects' %>
+<% if @competition.active_round.present? %>
+  <%= render 'pages/landing_sections/landing_bracket' %>
+<% else %>
+  <%
+  projects = @competition.projects.with_rank.sort_by(&:rank)
+  winners, losers = projects.partition { |p| p.eliminated_at.nil? }
+  if @competition.has_winner?
+    winner = @competition.winner
+    projects = losers.first(4)
+    concat render partial: 'pages/landing_sections/landing_winner', locals: { winner: winner }
+  else
+    projects = projects.sample(4)
+  end
+  concat render partial: 'pages/landing_sections/landing_projects',
+    locals: { projects: projects, has_winner: winner.present?}
+  %>
   <% end %>
-</section>

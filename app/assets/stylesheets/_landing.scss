@@ -1,6 +1,6 @@
 .landing {
   /* background colors */
-  $bg-blue: #67C6FF;
+  $bg-blue: #99FFF2;
   $bg-orange: #FEC27C;
 
   @mixin visible-when-animated {
@@ -25,11 +25,13 @@
 
     &-heading {
       text-align: center;
-      margin-bottom: $grid-gutter-width;
+      margin-bottom: $grid-gutter-width * 2;
+
       h1 {
+        font-size: ms(3);
         margin: 0 0 $grid-gutter-width / 2;
         color: $brand-primary;
-        font-weight: bold;
+        font-weight: 600;
       }
 
       .landing-section-subheading {
@@ -42,9 +44,9 @@
   }
 
   &-masthead {
-    $background: $bg-blue;
+    $background: lighten($brand-primary, 40%);
     background-color: $background;
-    background-image: url(https://s3.amazonaws.com/billioneffect/images/landing/billion-festival.jpg);
+    background-image: linear-gradient(rgba($background,0.5), rgba($background, 0.5)), image-url('gbh/banner.jpg');
     background-size: cover;
     background-position: center;
 
@@ -157,6 +159,18 @@
         @media (min-width: $screen-sm) {
           display: block;
         }
+      }
+    }
+  }
+
+  &-gbh {
+    background-color: white;
+    .gbh-logo {
+      text-align: center;
+      position: relative;
+      img {
+        width: 50%;
+        margin-top: 3em;
       }
     }
   }

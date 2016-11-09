@@ -7,9 +7,23 @@ class Competition < ActiveRecord::Base
   # TODO: validate that end_date > start_date
   validates :code_name, :start_date, :end_date, presence: true
 
+  validates :dollar_to_point, numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 1
+  }
+
+  # TODO: spec
+  def has_winner?
+    projects.where(eliminated_at: nil).count == 1
+  end
+
+  def winner
+    projects.find_by(eliminated_at: nil) if has_winner?
+  end
+
   # TODO: Opportunity for null object?
   def self.current_competition
-    find_by('start_date < :now and end_date > :now', now: Time.now)
+    find_by('start_date <= :now and end_date > :now', now: Time.now)
   end
 
   # TODO: Opportunity for null object?

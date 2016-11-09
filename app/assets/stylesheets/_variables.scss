@@ -3,13 +3,14 @@
 
 //== Colors
 $gray-base: #444951;
-$brand-primary: #323B63;
-$brand-success: #27ae60;
+$brand-primary: #005c84;
+$brand-accent: #23ccb7;
+$brand-success: #06d6a0;
 $brand-info: #3498db;
 $brand-warning: #f39c12;
-$brand-danger: #e74c3c;
+$brand-danger: #ef476f;
 
-$blue: #67C6FF;
+$blue: #129EFF;
 $orange: #FEC27C;
 $green: #80C703;
 $red: #FF6767;
@@ -18,16 +19,19 @@ $black: black;
 
 //== Scaffolding
 
-$body-bg: #eee;
-$text-color: #222;
+// $body-bg: #eee;
+$body-bg: #efefef;
+$text-color: rgba(0,0,0, 0.87);
 
 
 //== Typography
 
+// $font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif !default;
 $font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif !default;
 $font-size-base: 14px;
 
-$line-height-base: $fourth;
+$line-height-base: $fourth * $fourth;
+$line-height-computed: floor(($font-size-base * $line-height-base));
 
 $ms-base: $font-size-base;
 $ms-ratio: $fourth;
@@ -40,6 +44,17 @@ $font-size-h5: ms(0);
 $font-size-h6: ms(0);
 
 $headings-color: $gray-base;
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12;
+//** Padding between columns. Gets divided in half for the left and right.
+// $grid-gutter-width:         30px;
+$grid-gutter-width:         $line-height-computed;
+
 
 //== Modals
 
@@ -76,6 +91,26 @@ $border-radius-small: $border-radius-base;
 
 $padding-base-vertical: ms(-1);
 $padding-base-horizontal: ms(-1);
+
+
+//== Navbar
+//
+//##
+
+// Basic of a navbar
+// $navbar-height: 62px;
+$navbar-height: $line-height-computed * 3;
+
+// Navbar links
+$navbar-default-link-color:                $brand-primary;
+$navbar-default-link-hover-color:          lighten($brand-primary, 10%);
+$navbar-default-link-hover-bg:             transparent;
+$navbar-default-link-active-color:         darken($brand-primary, 10%);
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color;
+$navbar-default-brand-hover-color:         $navbar-default-link-hover-color;
+
 
 /* CUSTOM VARIABLES */
 
