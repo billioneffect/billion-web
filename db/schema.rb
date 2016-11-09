@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20160531024027) do
     t.date     "end_date",                       null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
-    t.integer  "dollar_to_point", default: 1,    null: false
     t.boolean  "open_donation",   default: true, null: false
+    t.integer  "dollar_to_point", default: 1,    null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

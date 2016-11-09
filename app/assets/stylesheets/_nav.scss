@@ -8,13 +8,13 @@
     line-height: $line-height-computed;
     .logo {
       border-right: 1px solid $brand-primary;
-      padding-right: 0.5em;
+      padding-right: $grid-gutter-width / 2;
       vertical-align: middle;
       position: relative;
       top: -25%;
     }
     .tenant {
-      padding-left: 0.5em;
+      padding-left: $grid-gutter-width / 2;
       font-size: ms(1);
     }
   }

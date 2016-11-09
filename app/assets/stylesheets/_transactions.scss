@@ -1,7 +1,7 @@
 .transaction {
 
   &-form {
-    padding: $grid-gutter-width 0;
+    padding: $grid-gutter-width * 2 0;
 
     .giving-sentence {
       font-size: ms(2);
