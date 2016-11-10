@@ -3,6 +3,7 @@ class TempUser < ActiveRecord::Base
   has_many :received_transactions, as: :recipient, class_name: 'Transaction'
 
   validates :email, email: true, allow_blank: true
+  validates :phone, phone: { possible: true, allow_blank: true }
 
   with_options unless: :in_person? do |web_user|
     web_user.validates :email, presence: true, if: 'phone.blank?'

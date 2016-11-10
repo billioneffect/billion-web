@@ -7,6 +7,11 @@ describe TempUser, type: :model do
     it { is_expected.to allow_value(Faker::Internet.email).for(:email) }
     it { is_expected.not_to allow_value(Faker::Lorem.word).for(:email) }
 
+    it { is_expected.not_to allow_value(Faker::Lorem.word).for(:phone) }
+    %w(8326607469 832.660.7469 832-660-7469 18326607469 +18326607469).each do |phone|
+      it { is_expected.to allow_value(phone).for(:phone) }
+    end
+
     context 'in person temp user' do
       subject { build :temp_user, :in_person }
 
