@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     Competition.current_competition.open_donation
   }
 
+  post '/sms_votes' => 'sms_votes#create', as: :sms_votes
+
   get '/leaderboard' => 'leaderboard#index', as: :leaderboard
   get '/leaderboard/data' => 'leaderboard#data', as: :leaderboard_data
 
