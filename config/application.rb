@@ -28,5 +28,12 @@ module Billion
 
     # Add to path
     config.autoload_paths << Rails.root.join('app', 'services')
+
+    # secure twilio webhook endpoint
+    config.middleware.use(
+      Rack::TwilioWebhookAuthentication,
+      ENV['twilio_auth_token'],
+      '/sms_votes'
+    )
   end
 end
