@@ -22,6 +22,7 @@ gem 'paperclip', '~> 4.3.0'
 gem 'rdiscount', '~> 2.1.8'
 gem 'quiet_assets', '~> 1.1.0'
 gem 'friendly_id', '~> 5.1.0'
+gem 'twilio-ruby', '~> 4.13'
 
 # Rails-specific gems
 gem 'rails', '4.2.0'
