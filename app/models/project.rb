@@ -14,6 +14,7 @@ class Project < ActiveRecord::Base
                           inverse_of: :project_2
 
   validates :name, presence: true
+  validates :sms_code, uniqueness: { scope: :competition_id, allow_nil: true }
 
   # TODO: spec for scopes
 

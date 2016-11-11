@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Transaction, type: :model do
   describe 'validations' do
     it { is_expected.to validate_presence_of(:recipient) }
+    it { is_expected.to validate_presence_of(:competition) }
 
     it do
       is_expected.to validate_numericality_of(:amount).is_greater_than(0.0)
