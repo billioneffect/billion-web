@@ -5,8 +5,20 @@ class SmsVotesController < ApplicationController
   before_action :set_project
 
   def create
-    Rails.logger.debug "Vote controller params: #{params.inspect}"
-    head :no_content
+    Transaction.create!(
+      competition: @competition,
+      recipient: @project,
+      sender: @temp_user,
+      points: 1
+    )
+
+    messenger.send_message(
+      to: @temp_user.phone,
+      body: "Thank you for voting for #{@project.name} for Startup Weekend's "\
+      "People's Choice Award!"
+    )
+
+    render json: {}, status: :created
   end
 
   private
@@ -21,6 +33,15 @@ class SmsVotesController < ApplicationController
   def set_project
     @project = @competition.projects.find_by! sms_code: params[:Body]
   rescue ActiveRecord::RecordNotFound
+    messenger.send_message(
+      to: @temp_user.phone,
+      body: "\"#{params[:Body]}\" is not a valid code. Please resubmit!"
+    )
+
     render json: { errors: ["Project not found"] }, status: :not_found
+  end
+
+  def messenger
+    @messenger ||= SMSMessenger.new
   end
 end
