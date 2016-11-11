@@ -175,6 +175,10 @@
     }
   }
 
+  &-works + &-gbh {
+    background-color: lighten($brand-accent, 20%);
+  }
+
   &-festival {
     counter-reset: festival-step;
 
