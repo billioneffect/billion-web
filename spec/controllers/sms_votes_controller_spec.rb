@@ -18,6 +18,11 @@ describe SmsVotesController, type: :controller do
       end
 
       it 'notifies temp user via sms' do
+        from = '1112221122'
+        post :create, From: from, Body: 'notasmscode'
+
+        sms = SMSMessenger.client.messages.last
+        expect(sms.to).to eq(from)
       end
     end
 
