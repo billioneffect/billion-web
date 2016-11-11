@@ -10,6 +10,9 @@ describe Competition, type: :model do
   end
 
   describe 'associations' do
+    it { is_expected.to have_many(:competition_features).inverse_of(:competition) }
+    it { is_expected.to have_one(:competition_config).inverse_of(:competition) }
+
     it do
       is_expected.to have_many(:projects)
         .inverse_of(:competition)

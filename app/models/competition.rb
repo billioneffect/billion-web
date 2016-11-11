@@ -1,4 +1,6 @@
 class Competition < ActiveRecord::Base
+  has_many :competition_features, inverse_of: :competition, dependent: :destroy
+  has_one :competition_config, inverse_of: :competition, dependent: :destroy
   has_many :projects, inverse_of: :competition, dependent: :destroy
   has_many :transactions, inverse_of: :competition, dependent: :destroy
   has_many :rounds, inverse_of: :competition, dependent: :destroy
