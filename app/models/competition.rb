@@ -5,9 +5,8 @@ class Competition < ActiveRecord::Base
   has_many :transactions, inverse_of: :competition, dependent: :destroy
   has_many :rounds, inverse_of: :competition, dependent: :destroy
 
-  # TODO: Add validations to ensure only 1 competition per time period
-  # TODO: validate that end_date > start_date
   validates :code_name, :start_date, :end_date, presence: true
+  validates :active, uniqueness: { conditions: -> { where(active: true) } }
 
   validates :dollar_to_point, numericality: {
     only_integer: true,
