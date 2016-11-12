@@ -2,7 +2,8 @@ class ControlPanel::TransactionsController < ControlPanel::BaseController
 
   def create
     transaction = Transaction.new(transaction_params)
-    transaction.points = transaction.amount * @competition.dollar_to_point
+    dollar_to_point = @competition.competition_config.dollar_to_point
+    transaction.points = transaction.amount * dollar_to_point
     recipient = transaction.recipient
     if recipient.eliminated?
       flash[:error] = "#{recipient.name} has already been eliminated."

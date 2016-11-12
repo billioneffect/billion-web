@@ -110,7 +110,11 @@
   <script src="https://js.braintreegateway.com/js/beta/braintree-hosted-fields-beta.18.min.js"></script>
   <script>
 $(document).ready(function() {
-  new DonationForm('#new_transaction', '<%= Braintree::ClientToken.generate %>', <%= @competition.dollar_to_point %>)
+  new DonationForm(
+    '#new_transaction',
+    '<%= Braintree::ClientToken.generate %>',
+    <%= @competition.competition_config.dollar_to_point %>
+  )
 });
   </script>
 <% end %>
