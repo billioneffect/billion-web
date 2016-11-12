@@ -5,13 +5,8 @@ class Competition < ActiveRecord::Base
   has_many :transactions, inverse_of: :competition, dependent: :destroy
   has_many :rounds, inverse_of: :competition, dependent: :destroy
 
-  validates :code_name, :start_date, :end_date, presence: true
+  validates :competition_config, :code_name, :start_date, :end_date, presence: true
   validates :active, uniqueness: { conditions: -> { where(active: true) } }
-
-  validates :dollar_to_point, numericality: {
-    only_integer: true,
-    greater_than_or_equal_to: 1
-  }
 
   def self.current_competition
     find_by active: true

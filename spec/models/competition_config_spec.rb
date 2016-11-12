@@ -11,5 +11,11 @@ describe CompetitionConfig, :type => :model do
         .is_greater_than_or_equal_to(1)
         .only_integer
     end
+
+    it do
+      is_expected.to validate_numericality_of(:dollar_to_point)
+        .is_greater_than_or_equal_to(1)
+        .only_integer
+    end
   end
 end

@@ -2,7 +2,10 @@ require 'rails_helper'
 
 describe TransactionsController, type: :controller do
   describe 'GET new' do
-    before { create :current_competition, dollar_to_point: 12 }
+    before do
+      config = build :competition_config, dollar_to_point: 12
+      create :current_competition, competition_config: config
+    end
 
     it 'returns http success' do
       get :new
@@ -45,7 +48,8 @@ describe TransactionsController, type: :controller do
       end
 
       it 'rounds the transaction points up' do
-        raw_points = 2222.11 * Competition.current_competition.dollar_to_point
+        config = Competition.current_competition.competition_config
+        raw_points = 2222.11 * config.dollar_to_point
         expected_points = raw_points.ceil
 
         create_transaction

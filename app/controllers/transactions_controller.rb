@@ -91,8 +91,9 @@ class TransactionsController < ApplicationController
   end
 
   def purchase_points
+    dollar_to_point = @competition.competition_config.dollar_to_point
     @purchase = Transaction.new purchase_params
-    @purchase.points = ((@purchase.amount || 0) * @competition.dollar_to_point).ceil
+    @purchase.points = ((@purchase.amount || 0) * dollar_to_point).ceil
     @purchase.save!
   end
 
