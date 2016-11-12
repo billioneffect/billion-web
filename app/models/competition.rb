@@ -13,6 +13,10 @@ class Competition < ActiveRecord::Base
     greater_than_or_equal_to: 1
   }
 
+  def self.current_competition
+    find_by active: true
+  end
+
   # TODO: spec
   def has_winner?
     projects.where(eliminated_at: nil).count == 1
@@ -22,12 +26,7 @@ class Competition < ActiveRecord::Base
     projects.find_by(eliminated_at: nil) if has_winner?
   end
 
-  # TODO: Opportunity for null object?
-  def self.current_competition
-    find_by active: true
-  end
-
-  # TODO: Opportunity for null object?
+  # TODO: determine active round via flag instead of start/end datetimes
   def active_round
     rounds.find_by('started_at < :now and ended_at > :now', now: Time.now)
   end
