@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :round, aliases: [:active_round] do
-    association :competition, factory: :current_competition
+    association :competition, factory: :competition
     started_at { 1.day.ago }
     ended_at { 1.day.from_now }
     round_number { Faker::Number.between(1, 10) }

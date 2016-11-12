@@ -82,9 +82,8 @@ describe Competition, type: :model do
   describe '.current_competition' do
     context 'there is a current competition' do
       it 'returns the current competition' do
-        create :previous_competition
-        create :future_competition
-        current_competition = create :current_competition
+        create :competition, active: false
+        current_competition = create :competition, active: true
 
         expect(Competition.current_competition).to eq(current_competition)
       end
