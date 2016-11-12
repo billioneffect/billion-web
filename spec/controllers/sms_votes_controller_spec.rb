@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe SmsVotesController, type: :controller do
   describe 'POST create' do
-    let!(:competiton) { create :current_competition }
+    let!(:competition) { create :current_competition }
 
     context 'fails to set temp user' do
       it 'responds with 422' do
@@ -44,7 +44,7 @@ describe SmsVotesController, type: :controller do
     context 'creates vote' do
       it 'responds with 201' do
         sms_code = 'GOOD_CODE'
-        competiton.projects << create(:project, sms_code: sms_code )
+        competition.projects << create(:project, sms_code: sms_code )
 
         create_vote = -> { post :create, From: '1112221111', Body: sms_code }
 
@@ -54,7 +54,7 @@ describe SmsVotesController, type: :controller do
       it 'notifies temp user via sms' do
         from = '1112221111'
         sms_code = 'GOOD_CODE'
-        competiton.projects << create(:project, sms_code: sms_code )
+        competition.projects << create(:project, sms_code: sms_code )
 
         post :create, From: from, Body: sms_code
 
@@ -65,11 +65,22 @@ describe SmsVotesController, type: :controller do
       it 'creates transaction' do
         from = '1112221111'
         sms_code = 'GOOD_CODE'
-        competiton.projects << create(:project, sms_code: sms_code )
+        competition.projects << create(:project, sms_code: sms_code )
 
         create_vote = -> { post :create, From: from, Body: sms_code }
 
         expect{ create_vote.call }.to change{ Transaction.count }.from(0).to(1)
+      end
+
+      it 'creates transaction with correct number of points' do
+        from = '1112221111'
+        sms_code = 'GOOD_CODE'
+        competition.projects << create(:project, sms_code: sms_code )
+        competition.competition_config.update dollar_to_point: 123
+
+        post :create, From: from, Body: sms_code
+
+        expect(Transaction.last.points).to eq(123)
       end
     end
   end

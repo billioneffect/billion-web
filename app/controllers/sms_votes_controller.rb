@@ -9,7 +9,7 @@ class SmsVotesController < ApplicationController
       competition: @competition,
       recipient: @project,
       sender: @temp_user,
-      points: 1
+      points: @competition.competition_config.dollar_to_point
     )
 
     messenger.send_message(
