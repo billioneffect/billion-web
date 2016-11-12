@@ -39,8 +39,13 @@ classes = ["project-card",
         <%= project.rank.ordinalize %> place
       <% end %>
     </span>
-    <% if @competition.open_donation %>
-      <%= link_to 'vote', link, class: 'card-learn-more' %>
-    <% end %>
+    <%= link_to_vote project, 'vote', class: 'card-learn-more' %>
+
+    <%# <% if @competition.open_donation %>
+    <%#   <% if true %>
+    <%#   <% else %>
+    <%#     <%= link_to 'vote', link, class: 'card-learn-more' %>
+    <%#   <% end %>
+    <%# <% end %>
   </div>
 </div>
