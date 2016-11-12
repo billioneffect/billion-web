@@ -24,6 +24,7 @@ gem 'quiet_assets', '~> 1.1.0'
 gem 'friendly_id', '~> 5.1.0'
 gem 'twilio-ruby', '~> 4.13'
 gem 'phonelib', '~> 0.6.6'
+gem 'rqrcode', '~> 0.10.1'
 
 # Rails-specific gems
 gem 'rails', '4.2.0'

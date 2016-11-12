@@ -8,12 +8,12 @@
 }
 
 .modal-header {
-  background-color: $brand-primary;
+  background-color: $gray-light;
   text-align: center;
   padding: $grid-gutter-width;
 
   .modal-title {
-    color: white;
+    color: $brand-primary;
     font-weight: bold;
     font-size: ms(2);
     line-height: 1;
