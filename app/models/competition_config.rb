@@ -10,4 +10,8 @@ class CompetitionConfig < ActiveRecord::Base
     only_integer: true,
     greater_than_or_equal_to: 1
   }
+
+  PROJECT_CARD_INFO_VALUES = %w(none rank points)
+  validates :project_card_info, inclusion: { in: PROJECT_CARD_INFO_VALUES }
+
 end
