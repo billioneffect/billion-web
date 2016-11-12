@@ -25,6 +25,7 @@ describe Competition, type: :model do
 
   describe 'associations' do
     it { is_expected.to have_many(:competition_features).inverse_of(:competition) }
+    it { is_expected.to have_many(:product_features).through(:competition_features) }
     it { is_expected.to have_one(:competition_config).inverse_of(:competition) }
 
     it do
@@ -76,6 +77,29 @@ describe Competition, type: :model do
 
         expect(competition.active_round).to be_nil
       end
+    end
+  end
+
+  describe '#has_feature?' do
+    it 'raises an error with invalid feature' do
+      competition = build :competition
+      expect { competition.has_feature?(:bad) }.to raise_error
+    end
+
+    it 'returns true if the competition has the feature' do
+      feature = create :product_feature, name: ProductFeature::FEATURES.first
+
+      competition = build :competition
+      competition.product_features << feature
+      competition.save
+
+      expect(competition).to have_feature(feature.name)
+    end
+
+    it 'returns false if the competition does not have the feature' do
+      feature = create :product_feature, name: ProductFeature::FEATURES.first
+      competition = create :competition
+      expect(competition).not_to have_feature(feature.name)
     end
   end
 

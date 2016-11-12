@@ -1,5 +1,6 @@
 class Competition < ActiveRecord::Base
   has_many :competition_features, inverse_of: :competition, dependent: :destroy
+  has_many :product_features, through: :competition_features
   has_one :competition_config, inverse_of: :competition, dependent: :destroy
   has_many :projects, inverse_of: :competition, dependent: :destroy
   has_many :transactions, inverse_of: :competition, dependent: :destroy
@@ -28,5 +29,11 @@ class Competition < ActiveRecord::Base
 
   def total_raised
     transactions.where('sender_id IS NULL').sum(:amount)
+  end
+
+  def has_feature?(feature)
+    raise "Unrecognized feature #{feature}." if !ProductFeature::FEATURES.include?(feature.to_sym)
+
+    self.product_features.exists?(name: feature.to_s)
   end
 end
