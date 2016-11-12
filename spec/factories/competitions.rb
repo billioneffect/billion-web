@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :competition, aliases: [:inactive_competition] do
+    competition_config
     code_name { Faker::Lorem.word }
     start_date { Faker::Date.backward(5) }
     end_date { Faker::Date.forward(5) }

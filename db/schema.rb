@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111232133) do
+ActiveRecord::Schema.define(version: 20161112014322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20161111232133) do
   create_table "competition_configs", force: :cascade do |t|
     t.integer "competition_id"
     t.integer "sms_votes_allowed", default: 1, null: false
+    t.integer "dollar_to_point",   default: 1, null: false
   end
 
   add_index "competition_configs", ["competition_id"], name: "index_competition_configs_on_competition_id", using: :btree
@@ -42,14 +43,13 @@ ActiveRecord::Schema.define(version: 20161111232133) do
   add_index "competition_features", ["product_feature_id"], name: "index_competition_features_on_product_feature_id", using: :btree
 
   create_table "competitions", force: :cascade do |t|
-    t.string   "code_name",       default: "",    null: false
-    t.date     "start_date",                      null: false
-    t.date     "end_date",                        null: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.boolean  "open_donation",   default: true,  null: false
-    t.integer  "dollar_to_point", default: 1,     null: false
-    t.boolean  "active",          default: false
+    t.string   "code_name",     default: "",    null: false
+    t.date     "start_date",                    null: false
+    t.date     "end_date",                      null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "open_donation", default: true,  null: false
+    t.boolean  "active",        default: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
