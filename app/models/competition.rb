@@ -5,14 +5,17 @@ class Competition < ActiveRecord::Base
   has_many :transactions, inverse_of: :competition, dependent: :destroy
   has_many :rounds, inverse_of: :competition, dependent: :destroy
 
-  # TODO: Add validations to ensure only 1 competition per time period
-  # TODO: validate that end_date > start_date
   validates :code_name, :start_date, :end_date, presence: true
+  validates :active, uniqueness: { conditions: -> { where(active: true) } }
 
   validates :dollar_to_point, numericality: {
     only_integer: true,
     greater_than_or_equal_to: 1
   }
+
+  def self.current_competition
+    find_by active: true
+  end
 
   # TODO: spec
   def has_winner?
@@ -23,12 +26,7 @@ class Competition < ActiveRecord::Base
     projects.find_by(eliminated_at: nil) if has_winner?
   end
 
-  # TODO: Opportunity for null object?
-  def self.current_competition
-    find_by('start_date <= :now and end_date > :now', now: Time.now)
-  end
-
-  # TODO: Opportunity for null object?
+  # TODO: determine active round via flag instead of start/end datetimes
   def active_round
     rounds.find_by('started_at < :now and ended_at > :now', now: Time.now)
   end

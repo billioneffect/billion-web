@@ -7,6 +7,20 @@ describe Competition, type: :model do
     it { should validate_presence_of(:start_date) }
     it { should validate_presence_of(:end_date) }
     it { should validate_numericality_of(:dollar_to_point).is_greater_than_or_equal_to(1) }
+
+    describe 'active' do
+      it 'allows many inactive competitions' do
+        create :competition, active: false
+        competiton = build :competition, active: false
+        expect(competiton.valid?).to eq(true)
+      end
+
+      it 'allows only one active competition' do
+        create :competition, active: true
+        competiton = build :competition, active: true
+        expect(competiton.valid?).to eq(false)
+      end
+    end
   end
 
   describe 'associations' do
@@ -68,9 +82,8 @@ describe Competition, type: :model do
   describe '.current_competition' do
     context 'there is a current competition' do
       it 'returns the current competition' do
-        create :previous_competition
-        create :future_competition
-        current_competition = create :current_competition
+        create :competition, active: false
+        current_competition = create :competition, active: true
 
         expect(Competition.current_competition).to eq(current_competition)
       end

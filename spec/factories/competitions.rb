@@ -1,8 +1,9 @@
 FactoryGirl.define do
-  factory :competition, aliases: [:current_competition] do
+  factory :competition, aliases: [:inactive_competition] do
     code_name { Faker::Lorem.word }
     start_date { Faker::Date.backward(5) }
     end_date { Faker::Date.forward(5) }
+    active false
 
     trait :with_projects do
       after(:build, :stub) do |competition|
@@ -10,14 +11,8 @@ FactoryGirl.define do
       end
     end
 
-    factory :previous_competition do
-      start_date { Faker::Date.backward(100) }
-      end_date { Faker::Date.backward(50) }
-    end
-
-    factory :future_competition do
-      start_date { Faker::Date.forward(50) }
-      end_date { Faker::Date.forward(100) }
+    factory :current_competition do
+      active true
     end
   end
 end
