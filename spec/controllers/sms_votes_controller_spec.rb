@@ -73,14 +73,72 @@ describe SmsVotesController, type: :controller do
       end
 
       it 'creates transaction with correct number of points' do
+        competition.competition_config.update dollar_to_point: 123
+
         from = '1112221111'
         sms_code = 'GOOD_CODE'
         competition.projects << create(:project, sms_code: sms_code )
-        competition.competition_config.update dollar_to_point: 123
 
         post :create, From: from, Body: sms_code
 
         expect(Transaction.last.points).to eq(123)
+      end
+    end
+
+    context 'temp user at vote limit' do
+      it 'responds with 422' do
+        # configure max votes
+        competition.competition_config.update sms_votes_allowed: 1
+
+        # setup otherwise valid request
+        user = create :temp_user, phone: '1112221111'
+        project = create :project, sms_code: 'GOOD_CODE'
+        competition.projects << project
+
+        # create pre-existing "vote"
+        create :transaction, points: 1, sender: user, recipient: project,
+          competition: competition
+
+        post :create, From: user.phone, Body: project.sms_code
+
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+
+      it 'does not create transaction' do
+        # configure max votes
+        competition.competition_config.update sms_votes_allowed: 1
+
+        # setup data for otherwise valid request
+        user = create :temp_user, phone: '1112221111'
+        project = create :project, sms_code: 'GOOD_CODE'
+        competition.projects << project
+
+        # create pre-existing "vote"
+        create :transaction, points: 1, sender: user, recipient: project,
+          competition: competition
+
+        create_vote = -> { post :create, From: user.phone, Body: project.sms_code }
+
+        expect{ create_vote.call }.to_not change{ Transaction.count }
+      end
+
+      it 'notifies user' do
+        # configure max votes
+        competition.competition_config.update sms_votes_allowed: 1
+
+        # setup data for otherwise valid request
+        user = create :temp_user, phone: '1112221111'
+        project = create :project, sms_code: 'GOOD_CODE'
+        competition.projects << project
+
+        # create pre-existing "vote"
+        create :transaction, points: 1, sender: user, recipient: project,
+          competition: competition
+
+        post :create, From: user.phone, Body: project.sms_code
+
+        sms = SMSMessenger.client.messages.last
+        expect(sms.to).to eq(user.phone)
       end
     end
   end
