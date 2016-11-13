@@ -21,14 +21,14 @@ classes = ["project-card",
     end
   %>
 
-  <%= link_to_if_present link, title: project.name  do %>
+  <%= link_to_vote project, title: project.name do %>
     <div class='card-image' style='background-image: url(<%= project.card_image_url || "http://placehold.it/640x480"%>)'>
     </div>
   <% end %>
 
   <div class='card-content'>
     <div class='card-project-title'>
-      <%= link_to_if_present project.name, link, title: project.name %>
+      <%= link_to_vote project, project.name, title: project.name %>
     </div>
     <p class='card-description'><%= truncate(project.blurb, length: 140)%></p>
   </div>
