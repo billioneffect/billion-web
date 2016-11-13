@@ -1,0 +1,18 @@
+.sms-modal {
+  margin-top: $grid-gutter-width * 2;
+  .modal-body {
+    text-align: center;
+  }
+
+  .qr-code {
+    margin-bottom: $grid-gutter-width;
+  }
+
+  .sms-instruction {
+    font-size: ms(1);
+  }
+
+  .sms-code, .sms-number, .sms-project {
+    font-weight: bold;
+  }
+}

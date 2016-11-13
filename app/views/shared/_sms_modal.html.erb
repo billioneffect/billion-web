@@ -1,0 +1,23 @@
+<% twilio_number = Phonelib.parse(ENV['twilio_from_number']) %>
+
+<div class="modal sms-modal fade" id="<%= modal_id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Support a project</h4>
+      </div>
+      <div class="modal-body">
+        <div class='qr-code'>
+          <%= raw ::RQRCode::QRCode.new("smsto:#{twilio_number.e164}:#{project.sms_code}").as_svg(color: '#23ccb7') %>
+        </div>
+        <div class='sms-instruction'>
+          Text <span class='sms-code'><%= project.sms_code %></span>
+          to <span class='sms-number'>
+            <%= twilio_number.local_number %>
+          </span><br />
+          to vote for <span class='sms-project'><%= project.name %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

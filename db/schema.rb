@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112014322) do
+ActiveRecord::Schema.define(version: 20161112221242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20161112014322) do
     t.integer "competition_id"
     t.integer "sms_votes_allowed", default: 1, null: false
     t.integer "dollar_to_point",   default: 1, null: false
+    t.string  "project_card_info", default: "none", null: false
   end
 
   add_index "competition_configs", ["competition_id"], name: "index_competition_configs_on_competition_id", using: :btree

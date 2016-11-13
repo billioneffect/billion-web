@@ -4,4 +4,8 @@
 FactoryGirl.create :user_role
 FactoryGirl.create :admin_role
 
-ProductFeature.where(name: 'sms-voting').first_or_create
+ProductFeature::FEATURES.each do |feature|
+  ProductFeature.where(name: feature.to_s).first_or_create
+end
+
+ProductFeature.where.not(name: ProductFeature::FEATURES).delete_all

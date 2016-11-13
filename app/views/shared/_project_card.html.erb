@@ -35,12 +35,27 @@ classes = ["project-card",
 
   <div class='card-footer'>
     <span class='card-points'>
+      <% if project.donation_count > 0 %>
+        <% case @competition.competition_config.project_card_info
+          when 'rank' %>
+          <% if project.respond_to?(:rank) && project.rank.present? %>
+            <%= project.rank.ordinalize %> place
+          <% end %>
+        <% when 'points' %>
+          <%= pluralize project.points_donated, 'pt' %>
+        <% end %>
+      <% end %>
+
       <% if project.donation_count > 0 && project.respond_to?(:rank) && project.rank.present? %>
-        <%= project.rank.ordinalize %> place
       <% end %>
     </span>
-    <% if @competition.open_donation %>
-      <%= link_to 'vote', link, class: 'card-learn-more' %>
-    <% end %>
+    <%= link_to_vote project, 'vote', class: 'card-learn-more' %>
+
+    <%# <% if @competition.open_donation %>
+    <%#   <% if true %>
+    <%#   <% else %>
+    <%#     <%= link_to 'vote', link, class: 'card-learn-more' %>
+    <%#   <% end %>
+    <%# <% end %>
   </div>
 </div>

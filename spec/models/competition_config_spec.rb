@@ -17,5 +17,10 @@ describe CompetitionConfig, :type => :model do
         .is_greater_than_or_equal_to(1)
         .only_integer
     end
+
+    it do
+      is_expected.to validate_inclusion_of(:project_card_info)
+        .in_array(CompetitionConfig::PROJECT_CARD_INFO_VALUES)
+    end
   end
 end

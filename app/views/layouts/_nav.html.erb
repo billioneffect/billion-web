@@ -22,17 +22,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Our Story', story_path %></li>
+            <li><%= link_to 'Startup Weekend 2016', 'http://www.up.co/communities/usa/columbus' %></li>
 
             <% if @competition.projects.size > 0 %>
               <li>
                 <%= link_to 'Participants', projects_path %>
               </li>
             <% end %>
-            <li>
-              <%= link_to 'Previous Cycle', 'https://idf.billioneffect.com' %>
-            </li>
-
             <% if @competition.total_raised > 100 %>
               <li class="navbar-total">
                 The Billion Fund:
