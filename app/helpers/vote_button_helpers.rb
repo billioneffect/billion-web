@@ -10,12 +10,21 @@ module VoteButtonHelpers
       if project.competition.has_feature?(:sms_voting)
         link_with_modal project, name, html_options, &block
       else
-        link_to name, new_transaction_path(project_id: project.id), html_options, &block
+        link_only project, name, html_options, &block
       end
     end
   end
 
   private
+
+  def link_only(project, name = nil, html_options = nil, &block)
+    if block_given?
+      link_to new_transaction_path(project_id: project.id), html_options, &block
+    else
+      link_to name, new_transaction_path(project_id: project.id), html_options
+    end
+
+  end
 
   def link_with_modal(project, name = nil, html_options = nil, &block)
 
