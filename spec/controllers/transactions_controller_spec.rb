@@ -7,8 +7,10 @@ describe TransactionsController, type: :controller do
       create :current_competition, competition_config: config
     end
 
+    let(:project) { create :project, competition: Competition.current_competition }
+
     it 'returns http success' do
-      get :new
+      get :new, project_id: project.short_name
       expect(response).to have_http_status(:success)
     end
   end
@@ -22,6 +24,7 @@ describe TransactionsController, type: :controller do
 
     let(:valid_params) do
       {
+        project_id: project.short_name,
         transaction: {
           amount: amount,
           recipient_id: project.id,
@@ -105,14 +108,6 @@ describe TransactionsController, type: :controller do
       context 'with invalid purchase' do
         subject(:create_transaction) do
           post :create, valid_params.merge(transaction: { amount: 0 })
-        end
-
-        include_examples 'it fails to create a transaction'
-      end
-
-      context 'with invalid allocatons' do
-        subject(:create_transaction) do
-          post :create, valid_params.tap { |p| p[:transaction].delete(:recipient_id) }
         end
 
         include_examples 'it fails to create a transaction'

@@ -1,7 +1,7 @@
 (function($) {
   'use strict';
 
-  function DonationForm(form, braintreeToken, dollarToPoint) {
+  function DonationForm(projectName, form, braintreeToken, dollarToPoint) {
     setupPointConverter(
       $(form).find('.dollar-container'),
       $(form).find('.point-container'),
@@ -10,7 +10,7 @@
 
     setupFormValidation(form);
 
-    setupBraintree(form, braintreeToken);
+    setupBraintree(projectName, form, braintreeToken);
   };
 
   function setupPointConverter($dollarContainer, $pointContainer, dollarToPoint) {
@@ -71,7 +71,7 @@
     point == 1 ? 'point' : 'points';
   }
 
-  function setupBraintree(form, braintreeToken) {
+  function setupBraintree(projectName, form, braintreeToken) {
       var $form = $(form);
       var form_id = $form.attr('id');
 
@@ -85,6 +85,9 @@
                 'font-size': '14px',
                 'font-family': 'Open Sans',
                 'color': '#222222',
+              },
+              '.invalid': {
+                'color': '#a94442',
               }
             },
             number: {
@@ -94,7 +97,8 @@
               selector: '#' + form_id + ' .cvv'
             },
             expirationDate: {
-              selector: '#' + form_id + ' .expiration-date'
+              selector: '#' + form_id + ' .expiration-date',
+              placeholder: 'mm/yyyy'
             }
           },
 
@@ -108,8 +112,8 @@
           onPaymentMethodReceived: function(obj) {
             if ($form.valid()) {
               var money = $form.find('.amount-field').val();
-              var project = $form.find('.project-select option:selected').text()
-              var message = 'You are about to donate ' + money + ' in support of ' + project + '.';
+              var message = 'You are about to donate ' + money + ' in support of '
+                + projectName + '.';
               message += '\n\nDo you wish to continue?'
               if (confirm(message)) {
                 $form.append($("<input type='hidden' name='payment_method_nonce' value='" + obj.nonce + "'/>"));
