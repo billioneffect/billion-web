@@ -72,3 +72,8 @@ en:
             title: Announcing the Winner
             content: "The winner will be announced to receive the fund in early
               2017!"
+
+      thank_you:
+        thank_you_html: "Thanks a billion! Your gift has helped bring
+          <span class=\"thank-you-project-name\"><strong>%{project_name}</strong>
+          </span>initiatives one step closer to being funded."
