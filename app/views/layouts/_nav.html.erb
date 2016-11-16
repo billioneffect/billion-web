@@ -36,7 +36,7 @@
             <% end %>
             <% if @competition.total_raised > 100 %>
               <li class="navbar-total">
-                The Billion Fund:
+                The <%= t('fund_name', scope: competition_scope) %>:
                 <%= number_to_currency @competition.total_raised %>
               </li>
             <% end %>
