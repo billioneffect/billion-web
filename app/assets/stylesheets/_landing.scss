@@ -378,6 +378,21 @@
     form {
       margin-top: $line-height-computed;
     }
+
+    button {
+      width: 4em;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    input {
+      border: 1px solid $input-border;
+      padding-left: $padding-base-horizontal;
+      padding-right: $padding-base-horizontal;
+      &:focus, &:active {
+        border-width: 1px;
+      }
+    }
   }
 
   &-partners {
