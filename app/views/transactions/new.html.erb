@@ -2,115 +2,121 @@
 
 <%= render 'page_header' %>
 
-<div class='transaction-form'>
+<%= form_for [@project, @transaction] do |f| %>
+<div class='transaction-form-new'>
   <div class='container'>
+    <div class='row'>
 
-    <%= form_for @transaction do |f| %>
-
-      <% if flash[:error] %>
-      <div class='row'>
-        <div class='col-md-6 col-md-offset-3'>
-          <div class='alert alert-danger'>
-            <% if flash[:error].size == 1 %>
-              <p><%= flash[:error].first %></p>
-            <% else %>
-              <p>Oops! Looks like there were some problems with your submission</p>
-              <ul>
-              <% flash[:error].each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <% end %>
-
-      <div class='row'>
-        <div class='col-md-8 col-md-offset-2'>
-          <p class='giving-sentence'>
-          I'd like to donate
-
+      <div class='col-md-12'>
+        <div class='giving-sentence'>
+          I&rsquo;d like to give
           <span class='dollar-container'>
             <%= f.text_field :amount, value: '1.00',
               class: 'amount-field inline-form-field',
-              data: { 'a-sign' => '$', 'v-max' => '100' },
+              data: { 'a-sign' => '$', 'v-max' => '1000' },
               required: true
             %>
           </span>
 
-          to the <%= link_to 'Billion&nbsp;Fund'.html_safe, story_path, target: '_blank' %>, <br/>
-
           in support of
-
-          <%= f.collection_select :recipient_id, @projects, :id, :name, { prompt: '...' },
-            class: 'project-select inline-form-field',
-            required: true %>.
-          </p>
+          <strong><%= @project.name %></strong>.
         </div>
       </div>
 
-      <div class='row'>
-        <div class='col-md-4 col-md-offset-4'>
+      <div class='col-md-12'>
+        <div class='form-content'>
+          <div class='row'>
 
-          <div class='payment-spinner'>
-            <%= icon('gear', 'Loading payment form...', class: 'fa-spin') %>
-          </div>
-
-          <div class='payment-form loading'>
-            <div class='form-group'>
-              <%= f.fields_for :temp_user do |temp_user_form| %>
-                <%= temp_user_form.label :email %>
-                <%= temp_user_form.email_field :email, class: 'form-control', required: true, disabled: true %>
-              <% end %>
+            <div class='col-md-6'>
+              <div class='project-description-column form-column'>
+                <h2 class='project-description-title'>About <%= @project.name %></h2>
+                <p class='project-description'><%= @project.blurb %></p>
+              </div>
             </div>
 
-            <div class='form-group'>
-              <label for="card-number">Card Number</label>
-              <div id='card-number' class='card-number braintree-control disabled'></div>
-            </div>
+            <div class='col-md-6'>
+              <div class='form-column'>
+                <div class='payment-spinner'>
+                  <%= icon('gear', 'Loading payment form...', class: 'fa-spin') %>
+                </div>
 
-            <div class='form-group'>
-              <label for="cvv">CVV</label>
-              <div id='cvv' class='cvv braintree-control disabled'></div>
-            </div>
+                <div class='payment-form loading'>
 
-            <div class='form-group'>
-              <label for="expiration-date">Expiration Date</label>
-              <div id='expiration-date' class='expiration-date braintree-control disabled'></div>
-            </div>
+                  <% if flash[:error] %>
+                    <div class='alert alert-danger'>
+                      <% if flash[:error].size == 1 %>
+                        <p><%= flash[:error].first %></p>
+                      <% else %>
+                        <p>Oops! Looks like there were some problems with your submission</p>
+                        <ul>
+                          <% flash[:error].each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                        </ul>
+                      <% end %>
+                    </div>
+                  <% end %>
 
-            <div class='form-group'>
-              <p>
-                By donating you accept the
-                <%= link_to 'Terms of Service', terms_path, target: '_blank' %>
-                and the
-                <%= link_to 'Privacy Policy',  privacy_path, target: '_blank' %>
-                .
-              </p>
-            </div>
+                  <div class='form-group'>
+                    <%= f.fields_for :temp_user do |temp_user_form| %>
+                      <%= temp_user_form.label :email %>
+                      <%= temp_user_form.email_field :email, class: 'form-control', disabled: true, required: true %>
+                    <% end %>
+                  </div>
 
-            <div class='form-group'>
-              <%= f.submit 'Donate', disabled_with: 'Please wait...', class: 'btn btn-large btn-block btn-primary' %>
-            </div>
+                  <div class='form-group'>
+                    <label for="card-number">Card Number</label>
+                    <div id='card-number' class='card-number braintree-control disabled'></div>
+                  </div>
 
-            <div class="text-center">
-              <a href="https://www.braintreegateway.com/merchants/<%= ENV['BRAINTREE_MERCHANT_ID'] %>/verified" target="_blank">
-                <img src="https://s3.amazonaws.com/braintree-badges/braintree-badge-wide-light.png" width="280px" height ="44px" border="0"/>
-              </a>
+                  <div class='row'>
+                    <div class='form-group col-md-6'>
+                      <label for="cvv">CVV</label>
+                      <div id='cvv' class='cvv braintree-control disabled'></div>
+                    </div>
+
+                    <div class='form-group col-md-6'>
+                      <label for="expiration-date">Expiration Date</label>
+                      <div id='expiration-date' class='expiration-date braintree-control disabled'></div>
+                    </div>
+                  </div>
+
+                  <div class='form-group'>
+                    <p>
+                    By donating you accept the
+                    <%= link_to 'Terms of Service', terms_path, target: '_blank' %>
+                    and the
+                    <%= link_to 'Privacy Policy',  privacy_path, target: '_blank' %>
+                    .
+                    </p>
+                  </div>
+
+                  <div class='form-group transaction-actions'>
+                    <a href="https://www.braintreegateway.com/merchants/<%= ENV['BRAINTREE_MERCHANT_ID'] %>/verified" target="_blank">
+                      <img src="https://s3.amazonaws.com/braintree-badges/braintree-badge-light.png" border="0"/>
+                    </a>
+
+                    <%= f.submit 'Donate', disabled_with: 'Please wait...', class: 'btn btn-large btn-primary' %>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    <% end %>
+
+    </div>
   </div>
 </div>
+<% end %>
 
 <%= content_for :scripts do %>
   <script src="https://js.braintreegateway.com/js/beta/braintree-hosted-fields-beta.18.min.js"></script>
   <script>
 $(document).ready(function() {
   new DonationForm(
+    '<%= @project.name %>',
     '#new_transaction',
     '<%= Braintree::ClientToken.generate %>',
     <%= @competition.competition_config.dollar_to_point %>

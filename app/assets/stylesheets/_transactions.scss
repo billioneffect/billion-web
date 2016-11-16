@@ -1,54 +1,43 @@
 .transaction {
 
-  &-form {
+  &-form-new {
     padding: $grid-gutter-width * 2 0;
 
     .giving-sentence {
-      font-size: ms(2);
+      background-color: $gray-light;
+      font-size: ms(3);
+      padding: $grid-gutter-width;
       text-align: center;
-      line-height: 2;
-
-      a {
-        font-weight: bold;
-      }
 
       input, select {
         border: none;
         background-color: transparent;
-        border-bottom: 1px solid $blue;
+        border-bottom: 1px solid $brand-primary;
+        font-weight: 600;
         height: 1.5em;
         line-height: 1.5;
         color: $brand-primary;
-        background-color: transparentize($blue, 0.95);
-      }
-
-      option {
-        font-size: ms(0);
-        background-color: white;
+        &:active, &:focus {
+          outline: none;
+        }
       }
 
       .amount-field {
         width: 4em;
         text-align: right;
       }
+    }
 
-      .project-select {
-        width: 15em;
-        &:active {
-          outline: none;
-        }
-      }
+    .form-content {
+      padding: $grid-gutter-width;
+      background-color: $body-content-bg;
+    }
 
-      .point-container {
-        font-weight: bold;
-      }
-
-      .inline-form-field.invalid {
-        background-color: $state-danger-bg;
-        border-color: $state-danger-text;
-        &:focus {
-          outline-color: $state-danger-text;
-        }
+    .project {
+      &-description-title {
+        font-size: ms(1);
+        font-weight: 600;
+        margin-bottom: $line-height-computed;
       }
     }
 
@@ -59,7 +48,6 @@
     }
 
     .payment-form {
-      margin: $grid-gutter-width 0;
       &.loading {
         opacity: 0;
       }
@@ -72,21 +60,28 @@
       position: relative;
 
       &.braintree-hosted-fields-focused {
-        border-color: $input-border-focus;
+        @include form-control-active;
       }
+
 
       &.braintree-hosted-fields-invalid {
-        border-color: $state-danger-text;
-      }
-
-      &.braintree-hosted-fields-invalid.braintree-hosted-fields-focused {
-        border-color: $state-danger-text;
-        background-color: $state-danger-bg;
+        @include form-control-error;
       }
 
       &.disabled {
-        background-color: $input-bg-disabled;
         cursor: $cursor-disabled;
+      }
+    }
+
+    .transaction-actions {
+      @include clearfix;
+
+      input[type=submit] {
+        float: right;
+      }
+
+      img {
+        max-height: $input-height-base;
       }
     }
   }

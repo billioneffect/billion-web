@@ -2,20 +2,17 @@ class TransactionsController < ApplicationController
   rescue_from Payment::RecordInvalid, with: :render_payment_error
   rescue_from ActiveRecord::RecordInvalid, with: :render_error
 
-  before_action :set_projects
+  before_action :set_project
   before_action :clean_amount, only: [:create]
 
   def new
-    @projects = @competition.projects.active
-    @project = @projects.find_by id: params[:project_id]
-    @transaction = Transaction.new(recipient_id: @project.try(:id))
+    @transaction = Transaction.new
   end
 
   def create
-    @project = @competition.projects.find_by(id: params[:transaction][:recipient_id])
 
     unless authorize_project(@project)
-      @transaction = Transaction.new(recipient_id: @project.try(:id))
+      @transaction = Transaction.new
       return render :new
     end
 
@@ -37,17 +34,15 @@ class TransactionsController < ApplicationController
   end
 
   def authorize_project(project)
-    if project.nil?
-      flash[:error] = ['The selected project does not exists.']
-    elsif project.eliminated?
+    if project.eliminated?
       flash[:error] = ['The selected project has been eliminated.']
     end
 
     return true if flash[:error].blank?
   end
 
-  def set_projects
-    @projects = @competition.projects.active
+  def set_project
+    @project = @competition.projects.active.friendly.find params[:project_id]
   end
 
   def clean_amount
@@ -75,7 +70,7 @@ class TransactionsController < ApplicationController
 
   def transaction_params
     params.require(:transaction).permit(:recipient_id).merge(
-      recipient_type: 'Project',
+      recipient: @project,
       sender_type: @temp_user.class.name,
       sender_id: @temp_user.id,
       competition_id: @competition.id

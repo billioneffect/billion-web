@@ -1,28 +1,68 @@
 //== Forms
 
+@mixin form-control-hover {
+  box-shadow: none;
+  border-color: $brand-accent;
+  border-width: 1px;
+}
+
+@mixin form-control-active {
+  box-shadow: none;
+  border-color: $brand-accent;
+  border-width: 2px;
+}
+
+@mixin form-control-error {
+  box-shadow: none;
+  color: $state-danger-text;
+  border-color: $state-danger-text;
+}
+
+
 .form-control {
   box-shadow: none;
-  &:focus {
-    box-shadow: none;
+
+  border: none;
+  padding: 0;
+  font-size: ms(0);
+  line-height: 1;
+  border-bottom: 1px solid $input-border;
+
+  &[disabled], &[readonly] {
+    background-color: $gray-light;
+    &:hover {
+      border-bottom: 1px solid $input-border;
+    }
+  }
+
+  &:hover {
+    @include form-control-hover;
+  }
+
+  &:focus, &:active {
+    @include form-control-active;
   }
 }
 
 label {
-  font-weight: normal;
-  color: $text-color;
-  line-height: 1.5;
+  font-weight: 600;
+  color: $brand-primary;
+  line-height: ms(1);
+  margin: 0;
 }
 
 .form-group {
-  margin-bottom: $grid-gutter-width / 2;
+  margin-bottom: $grid-gutter-width;
 }
 
 .has-error {
+  label {
+    color: $state-danger-text;
+  }
   .form-control {
-    box-shadow: none;
-    &:focus {
-      box-shadow: none;
-      background-color: $state-danger-bg;
+    @include form-control-error;
+    &:hover, &:active, &:focus {
+      @include form-control-error;
     }
   }
 
@@ -30,3 +70,4 @@ label {
     line-height: 1.5;
   }
 }
+

@@ -29,6 +29,7 @@
 
 
   .card-footer {
+    @include clearfix;
     font-size: ms(0);
     padding: $grid-gutter-width / 2;
     width: 100%;

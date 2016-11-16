@@ -18,11 +18,13 @@ Rails.application.routes.draw do
 
   post '/subscribe', to: 'subscribe#create', as: 'subscribe'
   resources 'bam_applications', only: [:create]
-  resources :projects, only: [:index]
+  resources :projects, only: [:index] do
+    resources :transactions, only: [:new, :create], path: 'donate', constraints: lambda { |request|
+      competition = Competition.current_competition
+      competition.open_donation && !competition.has_feature?(:sms_voting)
+    }
+  end
 
-  resources :transactions, only: [:new, :create], path: 'donate', constraints: lambda { |request|
-    Competition.current_competition.open_donation
-  }
 
   post '/sms_votes' => 'sms_votes#create', as: :sms_votes
 
