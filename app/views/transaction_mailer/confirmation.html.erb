@@ -1,12 +1,14 @@
-<p>Dear Community Member,</p>
+<%
+  competition = @transaction.competition
+  competition_scope = "competition_copy.#{competition.code_name.parameterize.underscore}"
+  amount = number_to_currency @purchase.amount
+  project_name = @transaction.recipient.name
+  points = number_with_delimiter @transaction.points
+%>
 
-<p>Thank you so much for participating in Startup Weekend People&rsquo;s Choice award!</p>
-
-<p>You have voted for <%= @transaction.recipient.name %>. If
-<%= @transaction.recipient.name %> receives the most votes, they will
-win the People&rsquo;s Choice award for Columbus Startup Weekend! The Columbus startup community, along with the entire Billion Team,
-greatly appreciate your support.</p>
-<p>With regards,</p>
-<p>The Billion Team</p>
-
-<p>Please feel free to reply to this email with questions, comments, or feedback.</p>
+<%= t('thank_you_email.thank_you_html',
+      scope: competition_scope,
+      amount: amount,
+      project_name: project_name,
+      points: points)
+%>

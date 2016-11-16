@@ -78,3 +78,33 @@ en:
         thank_you_html: "Thanks a billion! Your gift has helped bring
           <span class=\"thank-you-project-name\"><strong>%{project_name}</strong>
           </span>initiatives one step closer to being funded."
+
+      thank_you_email:
+        thank_you_html: >
+          <p>Dear Community Member,</p>
+          <p>Thank you so much for participating in START, the startup
+          community’s fund for Columbus new initiatives!</p>
+          <p>You have donated %{amount} to the START Fund, awarding
+          %{project_name} with %{points} point(s). If %{project_name} wins this
+          cycle, it will be the cause chosen to receive the fund! The Columbus
+          startup community, along with the entire Billion Team, greatly
+          appreciate your support.</p>
+          <p>With regards,</p>
+          <p>The Billion Team</p>
+          <p>Please feel free to reply to this email with questions, comments, or feedback.</p>
+        thank_you_plain: |
+          Dear Community Member,
+
+          Thank you so much for participating in START, the startup
+          community’s fund for Columbus new initiatives!
+
+          You have donated %{amount} to the START Fund, awarding %{project_name}
+          with %{points} point(s). If %{project_name} wins this cycle, it will
+          be the cause chosen to receive the fund! The Columbus startup
+          community, along with the entire Billion Team, greatly appreciate your
+          support.
+
+          With regards,
+          The Billion Team
+
+          Please feel free to reply to this email with questions, comments, or feedback.
