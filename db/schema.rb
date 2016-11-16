@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20161112221242) do
 
   create_table "competition_configs", force: :cascade do |t|
     t.integer "competition_id"
-    t.integer "sms_votes_allowed", default: 1, null: false
-    t.integer "dollar_to_point",   default: 1, null: false
+    t.integer "sms_votes_allowed", default: 1,      null: false
+    t.integer "dollar_to_point",   default: 1,      null: false
     t.string  "project_card_info", default: "none", null: false
   end
 

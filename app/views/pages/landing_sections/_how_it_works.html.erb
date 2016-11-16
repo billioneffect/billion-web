@@ -4,46 +4,44 @@
       <h1>Have Your Voice Heard</h1>
       <div class='row'>
         <div class='col-md-8 col-md-offset-2'>
-          <p class='landing-section-subheading'>Let us know who you think is best</p>
+          <p class='landing-section-subheading'>
+            Let us know which <%= t('projects_title', scope: competition_scope) %>
+            you think is best
+          </p>
         </div>
       </div>
     </div>
 
     <div class='row'>
+      <%
+        col_class = 'col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2'
+        t_scope = "#{competition_scope}.how_it_works"
+      %>
 
-      <% col_class = 'col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2' %>
       <div class='<%= col_class %>'>
         <%= image_tag 'gbh/gbh-pitch.png', class: 'center-block' %>
+
         <div class='billion-stage text-center'>
-          <h2>Watch the pitches</h2>
-          <p>
-          After a full weekend of hustle and market research, teams will pitch
-          Sunday evening at Pitch Night, November 13th, at CoverMyMeds.
-          </p>
+          <h2><%= t('step_1.title', scope: t_scope) %></h2>
+          <p><%= t('step_1.content', scope: t_scope) %></p>
         </div>
       </div>
+
       <div class='<%= col_class %>'>
         <%=image_tag 'gbh/gbh-vote.png', class: 'center-block' %>
 
         <div class='billion-stage text-center'>
-          <h2>Vote for your favorite</h2>
-          <p>
-            While the judges are deliberating, help your favorite teams win the
-            People&rsquo;s Choice Award by texting in your vote. Just text or follow
-            the QR code and <em>voilà</em>, you have cast your vote.
-          </p>
+          <h2><%= t('step_2.title', scope: t_scope) %></h2>
+          <p><%= t('step_2.content', scope: t_scope) %></p>
         </div>
       </div>
+
       <div class='<%= col_class %>'>
         <%=image_tag 'winner.png', class: 'center-block' %>
 
         <div class='billion-stage text-center'>
-          <h2>People's Choice Award</h2>
-          <p>
-            The team that garners the most votes wins the People&rsquo;s Choice Award
-            and will be announced as the winner! Make sure to cast your vote to
-            show your support.
-          </p>
+          <h2><%= t('step_3.title', scope: t_scope) %></h2>
+          <p><%= t('step_3.content', scope: t_scope) %></p>
         </div>
       </div>
     </div>

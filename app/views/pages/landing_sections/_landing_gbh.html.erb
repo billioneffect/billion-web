@@ -1,11 +1,14 @@
+<% t_scope = "#{competition_scope}.competition_details" %>
+
 <section class='landing-section landing-gbh' id='festival-section'>
   <div class='container'>
     <div class='landing-section-heading'>
-      <h1>Startup Weekend Columbus 2016</h1>
+      <h1><%= t('heading', scope: t_scope) %></h1>
+
       <div class='row'>
         <div class='col-md-8 col-md-offset-2'>
           <p class='landing-section-subheading'>
-            Want to build a business in a weekend? Let's make it happen!
+            <%= t('subheading', scope: t_scope) %>
           </p>
         </div>
       </div>
@@ -15,29 +18,14 @@
   <div class='container'>
     <div class='row'>
       <div class='col-md-6 gbh-logo'>
-        <%= image_tag 'tenant/startup_weekend/logo.png' %>
+        <%= image_tag t('image_path', scope: t_scope) %>
       </div>
       <div class='col-md-6'>
         <div class='festival-step'>
-          <h2>Share your idea</h2>
-          <p>
-            Pitch your idea to a room full of passionate community leader, designers,
-            developers, and other business hustlers who will be able to bring your
-            vision to reality.
-          </p>
-
-          <h2>Form teams</h2>
-          <p>
-            Team up around an idea that you believe in and work on it over the
-            weekend. Build an MVP with the support of some incredible mentors.
-          </p>
-
-          <h2>Present your idea</h2>
-          <p>
-            Present the idea with your team to a panel of judges. The top team
-            are provided with resources to move forward and sustain their
-            ideas.
-          </p>
+          <% t('sections', scope: t_scope ).each do |section| %>
+            <h2><%= section[:title] %></h2>
+            <p><%= section[:content] %></p>
+          <% end %>
         </div>
       </div>
     </div>

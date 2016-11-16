@@ -11,41 +11,21 @@
 
     <div class='row'>
       <div class='timeline'>
+        <% events = t('timeline.events', scope: competition_scope) %>
+        <% events.each do |event| %>
+          <div class="col-md-<%= (12 / events.size).to_s %> event-container">
+            <div class='timeline-event'>
+              <span class='timeline-date'>
+                <time datetime='<%= event[:datetime] %>'>
+                  <%= event[:human_datetime] %>
+                </time>
+              </span>
 
-        <div class='col-md-4 event-container'>
-          <div class='timeline-event'>
-            <span class='timeline-date'>
-              <time datetime='2016-11-11'>Friday 11/11</time>
-            </span>
-            <h2>Startup Weekend Begins</h2>
-            <p>Watch the pitches, pitch your own, and form team around great
-            ideas with other talented people.</p>
+              <h2><%= event[:title] %></h2>
+              <p><%= event[:content] %></p>
+            </div>
           </div>
-        </div>
-
-        <div class='col-md-4 event-container'>
-          <div class='timeline-event'>
-            <span class='timeline-date'>
-              <time datetime='2016-11-12'>Saturday 11/12</time>
-            </span>
-            <h2>Team Info Collection</h2>
-            <p>The Billion Team will be collecting information on your team. Please
-            have your team name, a short description (under 140 characters),
-            and a photo ready.</p>
-          </div>
-        </div>
-
-        <div class='col-md-4 event-container'>
-          <div class='timeline-event'>
-            <span class='timeline-date'>
-              <time datetime='2016-8-19'>Friday 8/19 8:30pm</time>
-            </span>
-            <h2>Voting and announcing the winner</h2>
-            <p>During judges deliberation, votes will be accepted through text
-            messages. After the votes have been tallied, the
-            winner will be announced.</p>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

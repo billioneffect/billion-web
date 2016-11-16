@@ -169,8 +169,10 @@
       text-align: center;
       position: relative;
       img {
-        width: 50%;
-        margin-top: 3em;
+        width: 100%;
+        @media (min-width: $screen-md) {
+          margin-top: 1em;
+        }
       }
     }
   }
