@@ -28,7 +28,7 @@
 
     <div class='row'>
       <div class='col-md-12 text-center'>
-        <%= link_to 'See all projects', projects_path, class: 'project-see-all btn btn-lg btn-primary' %>
+        <%= link_to "See all #{t('projects_title', scope: competition_scope).pluralize}", projects_path, class: 'project-see-all btn btn-lg btn-primary' %>
       </div>
     </div>
   </div>
