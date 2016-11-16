@@ -14,7 +14,10 @@
           </button>
           <%= link_to root_path, class: 'navbar-brand' do %>
             <div class='composite-logo'>
-              <%= image_tag 'billion_logo_small.png', class: 'logo' %><span class='tenant'>Startup Weekend</span>
+              <%= image_tag 'billion_logo_small.png', class: 'logo' %>
+              <span class='tenant'>
+                <%= t('title', scope: competition_scope) %>
+              </span>
             </div>
           <% end %>
         </div>
@@ -22,7 +25,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Startup Weekend 2016', 'http://www.up.co/communities/usa/columbus' %></li>
+            <% t('links', scope: competition_scope).each do |link| %>
+              <li><%= link_to link[:text], link[:url] %></li>
+            <% end %>
 
             <% if @competition.projects.size > 0 %>
               <li>

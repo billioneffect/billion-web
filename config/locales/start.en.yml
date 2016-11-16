@@ -1,0 +1,74 @@
+en:
+  competition_copy:
+    start:
+      title: START Fund
+      projects_title: cause
+
+      links: []
+
+      heading_html: "<span class=\"large\"><strong>Pick the cause to receive the
+        <u>START Fund</u></strong></span><br>A big-hearted fund powered by the
+        Columbus startup community"
+
+      how_it_works:
+        step_1:
+          title: Attend the Launch
+          content: "Rev1 has seeded the START fund with $10,000 and will match
+            the next $5,000 raised by the community! Attend the Founders Lunch
+            at Rev1 Ventures on November 16 to learn more about the START Fund
+            and how you can get involved."
+        step_2:
+          title: Learn About the Causes
+          content: "At the Founders Lunch, a list of causes will be launched on
+            Billion. Read more and find your favorite individual initiatives
+            within each cause. For example: Hunger is a cause, a nonprofit
+            under a cause will be an initiative! You can vote with your dollar
+            on your favorite cause."
+        step_3:
+          title: Cause is Announced
+          content: "In early 2017, the cause with the points will receive the
+            fund that has been accumulated over the course of a few months!
+            Thank you so much for participating!"
+
+      projects_preview:
+        subheading: What would you like to see receive the START Fund?
+
+      competition_details:
+        heading: START Fund
+        subheading: "Want to decide which local cause receives thousands of
+          dollars in funding?"
+        image_path: start_fund_logo.png
+        sections:
+          - title: Seeding the Fund
+            content: "Rev1 ventures seeded the innovation fund with $10,000 and
+              is looking to the community to raise the next portion of funds.
+              They will match dollar for dollar the amount that is raised."
+          - title: Attend Events
+            content: "Rev1 will hold events throughout the year that are open
+              to the community. At these events we’ll hold live crowdfunding
+              for the START fund where attendees can vote on their favorite
+              causes with their dollars. The points go to the chosen cause and
+              the money into the overall fund."
+          - title: Your voice has been heard!
+            content: "You can give to the Start fund through the Billion
+              website through the end of the year. The START fund advisory
+              board plans to revel which initiatives it will support in the
+              first quarter of 2017."
+
+      timeline:
+        events:
+          - datetime: 11/16/2016
+            human_datetime: Wednesday 11/16
+            title: Founders Lunch
+            content: "Attend the launch event to start crowdfunding for
+             Columbus’ greatest causes!"
+          - datetime:
+            human_datetime: November through January
+            title: Fundraising
+            content: "Check back for Rev1 events to attend and help support
+              causes in Columbus."
+          - datetime:
+            human_datetime: Early 2017
+            title: Announcing the Winner
+            content: "The winner will be announced to receive the fund in early
+              2017!"
