@@ -34,7 +34,7 @@
                 <%= link_to 'Participants', projects_path %>
               </li>
             <% end %>
-            <% if @competition.total_raised > 100 %>
+            <% if @competition.total_raised > 0 %>
               <li class="navbar-total">
                 The <%= t('fund_name', scope: competition_scope) %>:
                 <%= number_to_currency @competition.total_raised %>
