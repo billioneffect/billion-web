@@ -1,0 +1,119 @@
+en:
+  competition_copy:
+    bbc:
+      title: BBC Idea Pitch
+      projects_title: business
+      fund_name: Billion Fund
+
+      links: [
+        {
+          text: "Business Builders Club",
+          url: "http://www.businessbuildersclub.org/"
+        }
+      ]
+
+      heading_html: "<span class=\"large\">Choose your favorite ideas at<br/>
+        <strong>The BBC IdeaPitch Competition</strong>"
+
+      how_it_works:
+        heading: Vote for your favorite business pitch
+        step_1:
+          title: Watch the pitches
+          content: "See the most innovative, sustainable, and impactful
+            solutions to our most pressing social issues at the final
+            presentation of the BBC IdeaPitch."
+        step_2:
+          title: Vote for your favorite
+          content: "While the judges are deliberating, help your favorite teams
+            win the People's Choice Award by voting with your dollar, online or
+            at the event."
+        step_3:
+          title: People's Choice Award
+          content: "The team that raises the most money wins the People's
+            Choice Award and will receive the Billion Fund, all of the money
+            raised during the event."
+
+      projects_preview:
+        subheading: What would you like to see receive the Billion Fund?
+
+      competition_details:
+        heading: BBC IdeaPitch Competition 2016
+        subheading: "Have a business to start or get off the ground? Let us
+          help you change the world!"
+        image_path: bbc_logo.png
+        image_css: |
+          .landing-gbh .gbh-logo img {
+            width: 80% !important;
+          }
+
+          @media (min-width: 992px) {
+            .landing-gbh .gbh-logo img {
+              margin-top: 10em !important;
+            }
+          }
+        sections:
+          - title: Share Your Idea
+            content: "Pitch your business to a room full of investors,
+              entrepreneurs, and informed & experienced judges, get valuable
+              feedback, and win up to $3000 in seed funding for your venture!"
+          - title: Kick-off Your Business
+            content: "IdeaPitch gives BBC members and other students the
+              opportunity to present their idea to a panel of judges and fellow
+              members for a chance to win seed funding for their business. Past
+              winners such as CHAARG, MyEventMetrics, FlyByBBQ, and NMC
+              Athletics have taken home thousands of dollars and further
+              developed their passions as well as their businesses."
+          - title: Eat Good Food
+            content: "Enjoy free catered pulled pork BBQ sandwiches courtesy of
+              BBC’s very own FlyByBBQ (vegan options available)."
+
+      timeline:
+        events:
+          - datetime: 11/29/2016
+            human_datetime: November 29, 7:15pm-7:30pm
+            title: Food & Networking
+            content: "Get some free food and get to meet other Columbus
+              entrepreneurs."
+          - datetime: 11/29/2016
+            human_datetime: November 29, 7:45pm-9:15pm
+            title: IdeaPitch Competition Begins
+            content: "Watch the pitches and think about your favorites."
+          - datetime: 11/29/2016
+            human_datetime: November 29, 9:15-10:00pm
+            title: Fundraising & Announcing Winner
+            content: "Billion collect's votes for the People's Choice award,
+              after which BBC announces IdeaPitch winners."
+
+      thank_you:
+        thank_you_html: "Thanks a billion! Your gift has helped bring
+          <span class=\"thank-you-project-name\"><strong>%{project_name}</strong>
+          </span>one step closer to being funded."
+
+      thank_you_email:
+        thank_you_html: >
+          <p>Dear Community Member,</p>
+          <p>Thank you so much for participating in the BBC IdeaPitch People's
+          Choice Award!</p>
+          <p>You have donated %{amount} to the Billion Fund, awarding
+          %{project_name} with %{points} point(s). If %{project_name} wins this
+          competition, it will be the cause chosen to receive the fund! The
+          Business Builders Club, along with the entire Billion Team, greatly
+          appreciate your support.</p>
+          <p>With regards,</p>
+          <p>The Billion Team</p>
+          <p>Please feel free to reply to this email with questions, comments, or feedback.</p>
+        thank_you_plain: |
+          Dear Community Member,
+
+          Thank you so much for participating in the BBC IdeaPitch People's Choice Award!
+
+          You have donated %{amount} to the Billion Fund, awarding
+          %{project_name} with %{points} point(s). If %{project_name} wins this
+          competition, it will be the cause chosen to receive the fund! The
+          Business Builders Club, along with the entire Billion Team, greatly
+          appreciate your support.
+
+          With regards,
+          The Billion Team
+
+          Please feel free to reply to this email with questions, comments, or feedback.
