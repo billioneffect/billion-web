@@ -12,6 +12,7 @@ en:
         Columbus startup community"
 
       how_it_works:
+        heading: Have Your Voice Heard
         step_1:
           title: Attend the Launch
           content: "Rev1 has seeded the START fund with $10,000 and will match
@@ -39,6 +40,7 @@ en:
         subheading: "Want to decide which local cause receives thousands of
           dollars in funding?"
         image_path: start_fund_logo.png
+        image_css:
         sections:
           - title: Seeding the Fund
             content: "Rev1 ventures seeded the innovation fund with $10,000 and
