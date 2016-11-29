@@ -70,16 +70,16 @@ en:
       timeline:
         events:
           - datetime: 11/29/2016
-            human_datetime: November 29, 7:15pm-7:30pm
+            human_datetime: November 29, 7:15pm – 7:30pm
             title: Food & Networking
             content: "Get some free food and get to meet other Columbus
               entrepreneurs."
           - datetime: 11/29/2016
-            human_datetime: November 29, 7:45pm-9:15pm
+            human_datetime: November 29, 7:45pm – 9:15pm
             title: IdeaPitch Competition Begins
             content: "Watch the pitches and think about your favorites."
           - datetime: 11/29/2016
-            human_datetime: November 29, 9:15-10:00pm
+            human_datetime: November 29, 9:15 – End
             title: Fundraising & Announcing Winner
             content: "Billion collect's votes for the People's Choice award,
               after which BBC announces IdeaPitch winners."
