@@ -31,12 +31,22 @@
 
   .navbar-total {
     margin: 0;
+    padding: $nav-link-padding;
     color: $brand-primary;
-    border: 1px solid $brand-primary;
-    padding: 5px 10px;
+    font-weight: 600;
+    position: relative;
+    line-height: $line-height-computed;
+  }
 
-    @media (min-width: $screen-sm) {
-      margin: 17px 15px;
+  .navbar-progress {
+    height: 3px;
+    width: 100%;
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    .navbar-total {
+      padding-top:    $navbar-padding-vertical;
+      padding-bottom: $navbar-padding-vertical;
     }
   }
 }
