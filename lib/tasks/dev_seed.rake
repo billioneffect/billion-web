@@ -18,15 +18,15 @@ namespace :dev_seed do
       temp_user = FactoryGirl.create :temp_user
 
       rand(10..20).times do
-        dollar_to_point = Competition.first.dollar_to_point
+        dollar_to_point = Competition.current_competition.competition_config.dollar_to_point
         amount = rand(1.0..20.0).round(2)
         points = (amount * dollar_to_point).ceil
 
         Transaction.create(recipient: temp_user, amount: amount,
-                           points: points, competition: Competition.first)
+                           points: points, competition: Competition.current_competition)
 
         Transaction.create(recipient: project, sender: temp_user,
-                           points: points, competition: Competition.first)
+                           points: points, competition: Competition.current_competition)
       end
     end
   end
