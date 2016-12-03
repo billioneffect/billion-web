@@ -38,14 +38,15 @@
               <% goal = @competition.competition_config.transaction_goal %>
               <% raised = @competition.total_raised %>
 
-              <li class="navbar-total navbar-text">
-                <% if raised > 0 %>
-                  <%= t('fund_name', scope: competition_scope) %>:
-                  <span class='navbar-total-raised'>
-                  <%= number_to_currency @competition.total_raised %>
-                  </span>
-                  <span class='navbar-hidden-goal'>
-                    / <%= number_to_currency goal %>
+              <li class="">
+                <div class='navbar-total'>
+                  <% if raised > 0 %>
+                    <%= t('fund_name', scope: competition_scope) %>:
+                    <span class='navbar-total-raised'>
+                      <%= number_to_currency @competition.total_raised %>
+                    </span>
+                    <span class='navbar-hidden-goal'>
+                      / <%= number_to_currency goal %>
                   </span>
                 <% else %>
                   <%= t('fund_name', scope: competition_scope) %> Goal:
@@ -53,6 +54,7 @@
                 <% end %>
                 <div class='navbar-progress'>
                   <%= progress_bar raised/goal, animated: true %>
+                </div>
                 </div>
               </li>
 

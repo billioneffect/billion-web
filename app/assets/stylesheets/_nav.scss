@@ -30,14 +30,23 @@
   }
 
   .navbar-total {
+    margin: 0;
+    padding: $nav-link-padding;
     color: $brand-primary;
     font-weight: 600;
     position: relative;
+    line-height: $line-height-computed;
   }
 
   .navbar-progress {
     height: 3px;
     width: 100%;
-    position: absolute;
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    .navbar-total {
+      padding-top:    $navbar-padding-vertical;
+      padding-bottom: $navbar-padding-vertical;
+    }
   }
 }
