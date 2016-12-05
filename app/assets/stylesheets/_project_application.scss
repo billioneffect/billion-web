@@ -1,0 +1,19 @@
+
+.project-application {
+  margin-top: $grid-gutter-width * 2;
+  margin-bottom: $grid-gutter-width * 2;
+
+  .question-group {
+    border-bottom: none;
+  }
+
+  .application-actions {
+    .card-body {
+      text-align: center;
+    }
+    button {
+      padding: 1em 2em;
+    }
+  }
+}
+

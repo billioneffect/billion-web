@@ -1,0 +1,55 @@
+<% set_meta_title 'Apply' %>
+
+<div class='page-header'>
+  <div class='container'>
+    <div class='row'>
+      <h1>Apply for <%= t('fund_name', scope: competition_scope) %>
+      <small>Help change Columbus.</small>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class='project-application'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-12'>
+
+        <div class='card'>
+          <% (0..0).each do %>
+            <div class='question-group'>
+              <div class='question-group-title card-header'>
+                Tell us about your project.
+              </div>
+
+              <div class='card-body'>
+                <div class='row'>
+                  <div class='col-md-8'>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Example label</label>
+                      <input type="text" class="form-control" id="" placeholder="Example input">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Example label</label>
+                      <textarea class='form-control' rows='10'></textarea>
+                    </div>
+
+                  </div>
+
+                  <div class='col-md-4'>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
+
+          <div class='card-actions'>
+            <button class='btn btn-primary btn-lg'>Submit application</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

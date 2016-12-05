@@ -51,6 +51,13 @@ label {
   margin: 0;
 }
 
+textarea.form-control {
+  padding-top: $line-height-computed / 2;
+  padding-bottom: $line-height-computed / 2;
+  line-height: $line-height-computed;
+  resize: vertical;
+}
+
 .form-group {
   margin-bottom: $grid-gutter-width;
 }
@@ -70,4 +77,3 @@ label {
     line-height: 1.5;
   }
 }
-

@@ -87,12 +87,17 @@ $input-border-focus: rgba(lighten($brand-primary, 20%), 0.75);
 $state-danger-bg: mix($brand-danger, white, 5%);
 
 // Components
+
 $border-radius-base: 0;
 $border-radius-large: $border-radius-base;
 $border-radius-small: $border-radius-base;
 
 $padding-base-vertical: ms(-1);
-$padding-base-horizontal: ms(-1);
+$padding-base-horizontal: ms(3);
+
+$padding-large-vertical: ms(1);
+$padding-large-horizontal: ms(4);
+
 
 
 //== Navbar
@@ -118,3 +123,8 @@ $navbar-default-brand-hover-color:         $navbar-default-link-hover-color;
 
 // Typography
 $font-family-logo: 'Righteous', Helvetica, Arial, sans-serif !default;
+
+
+// Card
+$card-background-color: $white;
+$card-padding: $grid-gutter-width;
