@@ -14,6 +14,7 @@ en:
 
       heading_html: "<span class=\"large\">You decide the<br/><strong>
         featured cocktail at Wonderball!</strong>"
+      heading_image: cma.jpg
 
       how_it_works:
         heading: Vote for your favorite cocktail
