@@ -1,0 +1,137 @@
+en:
+  competition_copy:
+    wonderball:
+      title: CMA Wonderball Cocktail Competition
+      projects_title: cocktail
+      fund_name: Billion Fund
+
+      links: [
+        {
+          text: "CMA Wonderball",
+          url: "http://www.columbusmuseum.org/wonderball"
+        }
+      ]
+
+      heading_html: "<span class=\"large\">You decide the<br/><strong>
+        featured cocktail at Wonderball!</strong>"
+
+      how_it_works:
+        heading: Vote for your favorite cocktail
+        step_1:
+          title: Check out our cocktails
+          content: "The party planning committee has partnered with local
+            mixologists in search of the perfect creative cocktail. Check them
+            all out below!"
+        step_2:
+          title: Vote for your favorite
+          content: "Vote with your dollars. All donation dollars are fully
+            tax-deductible and support the Museum’s JPMorgan Chase Center for
+            Creativity, where imaginations roam wild."
+        step_3:
+          title: Enjoy the winning cocktail
+          content: "The drink with the most votes will be served as the
+            featured beverage at Wonderball on January 28."
+
+      projects_preview:
+        subheading: Which cocktail would you like to see featured at Wonderball?
+
+      competition_details:
+        heading: Wonderball
+        subheading: "Presented by the Columbus Museum of Art"
+        image_path: wonderball.jpg
+        image_css: |
+          .landing-gbh .gbh-logo img {
+            width: 80% !important;
+          }
+
+          @media (min-width: 992px) {
+            .landing-gbh .gbh-logo img {
+              margin-top: 2em !important;
+            }
+          }
+        sections:
+          - title: Dress-up, Dance, and Party for Creativity
+            content: "Wonderball is a fundraising party for the Columbus Museum
+              of Art on Saturday, January 28, 2017.  Dress-up, play, and dance
+              the night away at this affair of wondrous proportions,
+              benefitting the Museum’s JPMorgan Chase Center for Creativity.
+              This year the Museum is thrilled have Larry Smith,
+              creator of the Six-Word Memoir, and Piper Kerman, author of
+              Orange is the New Black, as Honorary Event Chairs. <strong>Event
+              details and tickets are available at
+              <a href=\"http://www.columbusmuseum.org/wonderball/\">
+              columbusmuseum.org/wonderball.</a></strong>"
+          - title: "Included with Each Ticket:"
+            content: >
+              <ul>
+                <li>Sample bites from Columbus’ best eateries</li>
+                <li>Welcome cocktail and additional drink ticket</li>
+                <li>After-hours access to CMA Galleries</li>
+                <li>Complimentary Parking</li>
+                <li>Tax-deductible donation benefitting the Museum’s creative
+                programming and community initiatives</li>
+              </ul>
+
+      timeline:
+        events:
+          - datetime: 12/15/2016
+            human_datetime: December 15
+            title: Cocktail Competition Begins
+            content: "You decide the featured cocktail at Wonderball! Vote with
+              your dollars (fully tax-deductible gift) for your favorite drink
+              here."
+          - datetime: 1/15/2017
+            human_datetime: January 15
+            title: Cocktail Competition Ends
+            content: "We'll announce the winning cocktail here!"
+          - datetime: 1/28/2017
+            human_datetime: January 28
+            title: CMA Wonderball
+            content: "Attend Wonderball for a fun time and try out the featured
+              cocktail selected by our Columbus Community."
+
+      thank_you:
+        thank_you_html: "Thanks a billion! Your gift has helped bring
+          <span class=\"thank-you-project-name\"><strong>%{project_name}</strong>
+          </span>one step closer to being featured at Wonderball."
+
+      thank_you_email:
+        thank_you_html: >
+          <p>Dear Community Member,</p>
+          <p>Thank you so much for participating in the CMA Wonderball Cocktail
+          Competition!</p>
+          <p>You have donated %{amount} to the Billion Fund, awarding
+          %{project_name} with %{points} point(s). If %{project_name} wins this
+          competition, it will be featured drink at the 2017 Wonderball event
+          on Saturday, January 28! For more information on Wonderball, visit
+          <a href="http://www.columbusmuseum.org/wonderball/">
+          columbusmuseum.org/wonderball</a>.</p>
+          <p>With regards,</p>
+          <p>The Billion and CMA Wonderball Teams</p>
+          <p>Please feel free to reply to this email with questions, comments,
+          or feedback.</p>
+          <p><strong>Please retain this information for your tax purposes. Your
+          contribution to the Columbus Museum of Art is fully deductible to the
+          extent allowed by law.</strong></p>
+        thank_you_plain: |
+          Dear Community Member,
+
+          Thank you so much for participating in the CMA Wonderball Cocktail
+          Competition!
+
+          You have donated %{amount} to the Billion Fund, awarding
+          %{project_name} with %{points} point(s). If %{project_name} wins this
+          competition, it will be featured drink at the 2017 Wonderball event
+          on Saturday, January 28! For more information on Wonderball, visit
+          columbusmuseum.org/wonderball.
+
+          With regards,
+
+          The Billion and CMA Wonderball Teams
+
+          Please feel free to reply to this email with questions, comments, or
+          feedback.
+
+          Please retain this information for your tax purposes. Your
+          contribution to the Columbus Museum of Art is fully deductible to the
+          extent allowed by law.
