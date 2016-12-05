@@ -1,0 +1,21 @@
+<div class='question-group'>
+  <div class='question-group-title card-header'>
+    <%= component.label %>
+  </div>
+
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-8'>
+        <% component.children.each do |child| %>
+          <%= render partial: component_partial(child), locals: { component: child } %>
+        <% end %>
+      </div>
+
+      <div class='col-md-4'>
+        <div class='question-group-help'>
+          <%= help_text component.help_text %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

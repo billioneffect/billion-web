@@ -15,5 +15,10 @@
       padding: 1em 2em;
     }
   }
+
+  .question-group-help {
+    background-color: darken($card-background-color, 2%);
+    padding: $grid-gutter-width;
+  }
 }
 

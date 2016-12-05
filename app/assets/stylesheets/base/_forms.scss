@@ -3,13 +3,13 @@
 @mixin form-control-hover {
   box-shadow: none;
   border-color: $brand-accent;
-  border-width: 1px;
+  border-bottom-width: 1px;
 }
 
 @mixin form-control-active {
   box-shadow: none;
   border-color: $brand-accent;
-  border-width: 2px;
+  border-bottom-width: 2px;
 }
 
 @mixin form-control-error {
@@ -52,8 +52,10 @@ label {
 }
 
 textarea.form-control {
-  padding-top: $line-height-computed / 2;
-  padding-bottom: $line-height-computed / 2;
+  padding: $line-height-computed / 2;
+  border-top: 1px solid $input-border;
+  border-left: 1px solid $input-border;
+  border-right: 1px solid $input-border;
   line-height: $line-height-computed;
   resize: vertical;
 }

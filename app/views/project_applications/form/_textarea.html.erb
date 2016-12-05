@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label for="<%= component.full_name %>"><%= component.label %></label>
+  <span class="help-block"><%= help_text component.help_text %></span>
+  <textarea type="text"
+         class="form-control"
+         <%= component.rows ? "rows=#{component.rows}" : "" %>
+         id="<%= component.full_name %>"></textarea>
+</div>

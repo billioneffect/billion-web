@@ -16,6 +16,26 @@
       <div class='col-md-12'>
 
         <div class='card'>
+          <%= form_tag do %>
+            <% @form.children.each do |child| %>
+              <% if child.is_a? FormBuilder::Component %>
+                <%= render partial: 'project_applications/form/top_level_component',
+                    locals: { component: child } %>
+              <% else %>
+                <%= render partial: component_partial(child),
+                    locals: { component: child } %>
+              <% end %>
+            <% end %>
+          <% end %>
+
+          <div class='card-actions'>
+            <button class='btn btn-primary btn-lg'>Submit application</button>
+          </div>
+        </div>
+
+
+        <!--
+        <div class='card'>
           <% (0..0).each do %>
             <div class='question-group'>
               <div class='question-group-title card-header'>
@@ -49,6 +69,7 @@
             <button class='btn btn-primary btn-lg'>Submit application</button>
           </div>
         </div>
+        -->
       </div>
     </div>
   </div>
