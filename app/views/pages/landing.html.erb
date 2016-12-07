@@ -18,6 +18,14 @@
   </div>
 </section>
 
+<style>
+  .landing-masthead {
+    background-image: linear-gradient(rgba(81, 202, 255, 0.5), rgba(81, 202, 255, 0.5)), url(<%= image_url(t('heading_image', scope: competition_scope, default: 'gbh/banner.jpg')) %>) !important;
+  }
+
+  <%= t('heading_image_css', scope: competition_scope) %>
+</style>
+
 <%= render 'pages/landing_sections/how_it_works' %>
 
 <% if !@competition.projects.empty? %>

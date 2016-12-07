@@ -46,9 +46,12 @@
   &-masthead {
     $background: lighten($brand-primary, 40%);
     background-color: $background;
-    background-image: linear-gradient(rgba($background,0.5), rgba($background, 0.5)), image-url('gbh/banner.jpg');
     background-size: cover;
     background-position: center;
+
+    // TODO: This is overriden in landing.html to be configurable.
+    // There is probably a better solution.
+    background-image: linear-gradient(rgba($background,0.5), rgba($background, 0.5)), image-url('gbh/banner.jpg');
 
     .logo {
       height: 40px;
@@ -178,7 +181,7 @@
   }
 
   &-works + &-gbh {
-    background-color: lighten($brand-accent, 20%);
+    background-color: lighten($brand-primary, 60%);
   }
 
   &-festival {

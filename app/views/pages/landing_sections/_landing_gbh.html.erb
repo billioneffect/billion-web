@@ -25,7 +25,7 @@
         <div class='festival-step'>
           <% t('sections', scope: t_scope ).each do |section| %>
             <h2><%= section[:title] %></h2>
-            <p><%= section[:content] %></p>
+            <p><%= section[:content].html_safe %></p>
           <% end %>
         </div>
       </div>
