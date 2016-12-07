@@ -15,14 +15,19 @@ en:
       heading_html: "<span class=\"large\">You decide the<br/><strong>
         featured cocktail at Wonderball!</strong>"
       heading_image: cma.jpg
+      heading_image_css: |
+        .landing-masthead {
+          background-position-y: bottom;
+        }
+
 
       how_it_works:
         heading: Vote for your favorite cocktail
         step_1:
           title: Check out our cocktails
-          content: "The party planning committee has partnered with local
-            mixologists in search of the perfect creative cocktail. Check them
-            all out below!"
+          content: "The party planning committee has partnered with Middle West
+            Spirits and local mixologists in search of the perfect creative
+            cocktail. Check them all out below!"
         step_2:
           title: Vote for your favorite
           content: "Vote with your dollars. All donation dollars are fully
@@ -65,8 +70,8 @@ en:
           - title: "Included with Each Ticket:"
             content: >
               <ul>
-                <li>Sample bites from Columbus’ best eateries</li>
                 <li>Welcome cocktail and additional drink ticket</li>
+                <li>Sample bites from Columbus’ best eateries</li>
                 <li>After-hours access to CMA Galleries</li>
                 <li>Complimentary Parking</li>
                 <li>Tax-deductible donation benefitting the Museum’s creative
