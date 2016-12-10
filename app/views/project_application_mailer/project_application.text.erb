@@ -1,0 +1,12 @@
+Hi there!
+
+The following application was submitted to your Billion competition.
+
+Best,
+The Billion team
+
+---
+
+<% @form.children.each do |child| %>
+  <%= render partial: "project_application_mailer/component", locals: { component: child } %>
+<% end %>

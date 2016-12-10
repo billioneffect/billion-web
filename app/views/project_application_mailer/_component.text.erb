@@ -1,0 +1,20 @@
+<% case component
+  when FormBuilder::Group %>
+
+<%= component.label %>
+<%= '=' * [component.label.length, 80].min %>
+
+<% component.children.each do |child|  %>
+  <%= render partial: 'project_application_mailer/component', locals: { component: child } %>
+<% end %>
+
+<% else %>
+
+<%= component.label %>
+<%= '-' * [component.label.length, 80].min %>
+<% if component.value %>
+<%= component.value %>
+<% else %>
+No answer
+<% end %>
+<% end %>
