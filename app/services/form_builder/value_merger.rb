@@ -35,7 +35,7 @@ module FormBuilder
 
     def permitted_keys_for(node)
       if node.respond_to? :children
-        {node.name => node.children.map { |child| permitted_keys_for(child) }}
+        { node.name => node.children.map { |child| permitted_keys_for(child) } }
       else
         node.name
       end

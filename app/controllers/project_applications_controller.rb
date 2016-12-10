@@ -8,7 +8,10 @@ class ProjectApplicationsController < ApplicationController
 
   def create
     @merger.merge form_params
-    logger.debug @form.as_json
+
+    ProjectApplicationMailer
+      .project_application(@form, @competition.competition_config.application_email)
+      .deliver_now
   end
 
   private
@@ -21,6 +24,7 @@ class ProjectApplicationsController < ApplicationController
     application_form_description = I18n.t("application_form", scope: competition_scope)
     @form = FormBuilder::Form.new(application_form_description)
     @merger = FormBuilder::ValueMerger.new @form
+
   end
 
   def component_partial(component)

@@ -1,0 +1,17 @@
+<% case component
+  when FormBuilder::Group %>
+
+    <h1 style='font-size: 1.2em'><%= component.label %></h1>
+    <% component.children.each do |child|  %>
+      <%= render partial: 'project_application_mailer/component', locals: { component: child } %>
+    <% end %>
+
+  <% else %>
+
+    <p><strong><%= component.label %></strong></p>
+    <% if component.value %>
+      <%= simple_format component.value %>
+    <% else %>
+      No answer
+    <% end %>
+  <% end %>
