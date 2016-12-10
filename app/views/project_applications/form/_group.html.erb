@@ -6,8 +6,10 @@
   <div class='card-body'>
     <div class='row'>
       <div class='col-md-8'>
-        <% component.children.each do |child| %>
-          <%= render partial: component_partial(child), locals: { component: child } %>
+        <%= f.fields_for component.name do |group_form| %>
+          <% component.children.each do |child| %>
+            <%= render partial: component_partial(child), locals: { f: group_form, component: child } %>
+          <% end %>
         <% end %>
       </div>
 

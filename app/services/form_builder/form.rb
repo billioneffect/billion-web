@@ -30,10 +30,6 @@ module FormBuilder
       super.merge(type: self.class.name.demodulize)
     end
 
-    def full_name
-      name.underscore
-    end
-
     private
     def instantiate_child(hash)
         klass = "FormBuilder::#{hash[:type]}".safe_constantize

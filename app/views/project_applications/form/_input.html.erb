@@ -1,8 +1,11 @@
 <div class="form-group">
-  <label for="<%= component.full_name %>"><%= component.label %></label>
-  <input type="text"
-         class="form-control"
-         id="<%= component.full_name %>"
-         placeholder="<%= component.placeholder %>" />
+  <%= f.label component.name do %>
+    <%= component.label %>
+  <% end %>
+  <%=
+    f.text_field component.name,
+      class: 'form-control',
+      placeholder: component.placeholder
+  %>
   <span class="help-block"><%= help_text component.help_text %></span>
 </div>

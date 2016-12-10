@@ -2,11 +2,7 @@ module FormBuilder
   class Component
     include ActiveModel::Model
 
-    attr_accessor :name, :label, :required, :help_text, :parent
-
-    def full_name
-      "#{parent.full_name}_#{name.underscore}"
-    end
+    attr_accessor :name, :label, :help_text, :parent, :required, :value
 
     def name
       @name || label.parameterize.underscore
