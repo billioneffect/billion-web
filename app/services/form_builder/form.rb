@@ -5,11 +5,8 @@ module FormBuilder
     attr_reader :children
     attr_accessor :name
 
-    def initialize(*args)
-      super
-    end
-
     def children=(children)
+      @children = []
       children.each { |child| add child }
     end
 
@@ -27,10 +24,15 @@ module FormBuilder
     end
 
     def as_json(options = {})
-      super.merge(type: self.class.name.demodulize)
+      super(options).merge(type: self.class.name.demodulize)
+    end
+
+    def ==(o)
+      as_json == o.as_json
     end
 
     private
+
     def instantiate_child(hash)
         klass = "FormBuilder::#{hash[:type]}".safe_constantize
         klass.new(hash.except(:type))

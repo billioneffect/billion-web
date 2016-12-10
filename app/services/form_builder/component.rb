@@ -12,5 +12,9 @@ module FormBuilder
       super(options.merge(except: "parent")).merge(type: self.class.name.demodulize)
     end
 
+    def ==(o)
+      as_json == o.as_json
+    end
+
   end
 end
