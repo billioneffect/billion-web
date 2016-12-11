@@ -31,6 +31,13 @@
 <% if !@competition.projects.empty? %>
   <%= render 'pages/landing_sections/landing_movements' %>
 <% end %>
+
 <%= render 'pages/landing_sections/landing_gbh' %>
+
+<%=
+  extra_sections = t('extra_landing_sections', scope: competition_scope, default: '')
+  (extra_sections.blank? ? [] : extra_sections).join.html_safe
+%>
+
 <%= render 'pages/landing_sections/landing_dates' %>
 <%= render 'pages/landing_sections/landing_join' %>

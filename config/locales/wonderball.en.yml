@@ -96,6 +96,141 @@ en:
             content: "Attend Wonderball for a fun time and try out the featured
               cocktail selected by our Columbus Community."
 
+      extra_landing_sections:
+        - >
+          <style>
+            .mixologists .bio {
+              margin-bottom: 50px;
+            }
+
+            .mixologists .img-container {
+              width: 100%;
+              max-width: 150px;
+              background-size: cover;
+              background-position: center;
+              border-radius: 50%;
+              margin: 0 auto;
+            }
+
+            .mixologists .img-container.first {
+              background-image: url(https://s3.amazonaws.com/billioneffect/images/wonderball/Alex+Eiler+Photo.jpg);
+            }
+
+            .mixologists .img-container.second {
+              background-image: url(https://s3.amazonaws.com/billioneffect/images/wonderball/William+Trey+Willis+III+Photo.jpg);
+            }
+
+            .mixologists .img-container.third {
+              background-image: url(https://s3.amazonaws.com/billioneffect/images/wonderball/Sean+Ward+Photo.jpg);
+            }
+
+            .mixologists .img-container.fourth {
+              background-image: url(https://s3.amazonaws.com/billioneffect/images/wonderball/Jillian+Smith+Photo.jpg);
+            }
+
+            .mixologists .img-container:after {
+              content: "";
+              display: block;
+              padding-bottom: 100%;
+            }
+
+            .mixologists p, .mixologists h2 {
+            }
+
+            .mixologists h2 {
+              margin-top: 0
+            }
+          </style>
+
+          <section class='landing-section mixologists' style='background-color: #b7e9ff'>
+            <div class="container">
+              <div class='landing-section-heading'>
+                <h1>Meet the Mixologists</h1>
+
+                <div class='row'>
+                  <div class='col-md-8 col-md-offset-2'>
+                    <p class='landing-section-subheading'>
+                      They are pretty great. Just sayin'.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class='container'>
+              <div class='row bio'>
+                <div class='col-sm-2 col-sm-offset-2'>
+                  <div class='img-container first'></div>
+                </div>
+
+                <div class='col-sm-6'>
+                  <h2>Alex Eiler</h2>
+
+                  <p>Alex Eiler is the beverage manager of Strongwater Food
+                  and Spirits. He was a self-taught hobby mixologist for
+                  over five years and has been practicing professionally
+                  for three. He is also involved in the Columbus local
+                  music scene in his spare time.</p>
+                </div>
+              </div>
+
+              <div class='row bio'>
+                <div class='col-sm-2 col-sm-offset-2'>
+                  <div class='img-container second'></div>
+                </div>
+
+                <div class='col-sm-6'>
+                  <h2>William Willis III</h2>
+
+                  <p>William Willis III, Trey to most who know him, is a
+                    Columbus native that has been providing quality
+                    hospitality around town for 15 years.  To help stay
+                    current on trends, innovation and education, Trey is a
+                    member of the Columbus chapter of the United States
+                    Bartenders Guild. Trey currently serves up creative
+                    cocktails paired with great food with the team at The
+                    Avenue Steak Tavern.</p>
+                </div>
+              </div>
+
+              <div class='row bio'>
+                <div class='col-sm-2 col-sm-offset-2'>
+                  <div class='img-container third'></div>
+                </div>
+
+                <div class='col-sm-6'>
+                  <h2>Sean Ward</h2>
+
+                  <p>Sean Ward is the beverage director of Giuseppe&#39;s
+                    Ritrovo, celebrating twenty years in business, that he is
+                    proud to say he’s been part of for near a decade. The bar
+                    celebrates the booming cocktail industry with seasonal
+                    menus and a wide variety of spirits and wine to accompany
+                    a classic Italian meal unparalleled in this city!</p>
+                </div>
+              </div>
+
+              <div class='row bio'>
+                <div class='col-sm-2 col-sm-offset-2'>
+                  <div class='img-container fourth'></div>
+                </div>
+
+                <div class='col-sm-6'>
+                  <h2>Jillian Smith</h2>
+
+                  <p>Jillian Smith is bartender/manager at MOUTON in the
+                    Short North. She fell in love with the craft cocktail
+                    scene about three years ago while working at
+                    Natalie&#39;s Coal Fired Pizza and Live Music in
+                    Worthington. Jillian has spent this last year traveling
+                    to cocktail seminars to try and improve her knowledge of
+                    the craft and is a member of the Columbus Chapter of the
+                    United States Bartenders Guild.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
       thank_you:
         thank_you_html: "Thanks a billion! Your gift has helped bring
           <span class=\"thank-you-project-name\"><strong>%{project_name}</strong>
