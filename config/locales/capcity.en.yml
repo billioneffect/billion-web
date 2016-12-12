@@ -1,88 +1,97 @@
 en:
   competition_copy:
     capcity:
-      title: CapCity BioHackers
+      title: Cap City BioHackers
       projects_title: project
       fund_name: Billion Fund
 
       links: [
         {
-          text: "Business Builders Club",
-          url: "http://www.businessbuildersclub.org/"
+          text: "Cap City BioHackers",
+          url: "http://www.capcitybiohackers.org/"
         }
       ]
 
       heading_html: "<span class=\"large\">Choose your favorite ideas at<br/>
-        <strong>The BBC IdeaPitch Competition</strong>"
+        <strong>Cap City Lab Equipment Hack competition</strong>"
 
       how_it_works:
-        heading: Vote for your favorite business pitch
+        heading: Vote for your favorite DIY equipment idea.
         step_1:
-          title: Watch the pitches
-          content: "See the most innovative, sustainable, and impactful
-            solutions to our most pressing social issues at the final
-            presentation of the BBC IdeaPitch."
+          title: Check out our projects
+          content: "See the creative ideas to take off-the-shelf parts and turn
+            it into essentials equipments in a biologist's toolbox."
         step_2:
           title: Vote for your favorite
-          content: "While the judges are deliberating, help your favorite teams
-            win the People's Choice Award by voting with your dollar, online or
-            at the event."
+          content: "Let us know which projects are your favorite by voting with
+            your dollars. The money raised will be used to purchase materials and
+            support future meet-ups."
         step_3:
-          title: People's Choice Award
-          content: "The team that raises the most money wins the People's
-            Choice Award and will receive the Billion Fund, all of the money
-            raised during the event."
+          title: Hack on the equipments
+          content: "Once the votes are tallied, we'll begin tackling the most
+            popular projects and stock our labs with DIY equipments rivaling that
+            of professional laboratories."
 
       projects_preview:
-        subheading: What would you like to see receive the Billion Fund?
+        subheading: What equipment would you like to see us working on?
 
       competition_details:
-        heading: BBC IdeaPitch Competition 2016
-        subheading: "Have a business to start or get off the ground? Let us
-          help you change the world!"
-        image_path: bbc_logo.png
+        heading: Cap City Biohackers
+        subheading: "Democratizing access to science for all"
+        image_path: tenant/capcity/logo.png
         image_css: |
           .landing-gbh .gbh-logo img {
             width: 80% !important;
           }
-
           @media (min-width: 992px) {
             .landing-gbh .gbh-logo img {
-              margin-top: 10em !important;
+              margin-top: 5em !important;
             }
           }
         sections:
-          - title: Share Your Idea
-            content: "Pitch your business to a room full of investors,
-              entrepreneurs, and informed & experienced judges, get valuable
-              feedback, and win up to $3000 in seed funding for your venture!"
-          - title: Kick-off Your Business
-            content: "IdeaPitch gives BBC members and other students the
-              opportunity to present their idea to a panel of judges and fellow
-              members for a chance to win seed funding for their business. Past
-              winners such as CHAARG, MyEventMetrics, FlyByBBQ, and NMC
-              Athletics have taken home thousands of dollars and further
-              developed their passions as well as their businesses."
-          - title: Eat Good Food
-            content: "Enjoy free catered pulled pork BBQ sandwiches courtesy of
-              BBC’s very own FlyByBBQ (vegan options available)."
+          - title: About Us
+            content: >
+              <p>The Cap City Biohackers are dedicated to demystifying and
+              democratizing science for people of all backgrounds. Founded in
+              Columbus in 2015, we are a part of the world-wide DIYBio movement
+              and the first established group in Ohio. We have formed a strong
+              community around citizen science, including monthly lectures,
+              discussions, and hands-on demonstrations.</p>
+
+          - title: DIY Lab Equipment Hack
+            content:
+              <p>Our long-term goal is to create a biology lab that’s open to
+              the community. The first step to this is stocking the lab with
+              equipments. And because we want to provide those tools to as many
+              people as possible, we need to rely upon the collective
+              creativity of the people of Columbus.</p>
+
+              <p>We want to get a long list of possible equipment hacks to
+              choose from, not only so we can raise more money to sustain the
+              group, but also so we can plan recurring meetings to come
+              together and stock our lab full of awesome tools that we build
+              ourselves.</p>
 
       timeline:
         events:
-          - datetime: 11/29/2016
-            human_datetime: November 29, 7:15pm – 7:30pm
-            title: Food & Networking
-            content: "Get some free food and get to meet other Columbus
-              entrepreneurs."
-          - datetime: 11/29/2016
-            human_datetime: November 29, 7:45pm – 9:15pm
-            title: IdeaPitch Competition Begins
-            content: "Watch the pitches and think about your favorites."
-          - datetime: 11/29/2016
-            human_datetime: November 29, 9:15 – End
-            title: Fundraising & Announcing Winner
-            content: "Billion collect's votes for the People's Choice award,
-              after which BBC announces IdeaPitch winners."
+          - datetime: 12/13/2016
+            human_datetime: December 13 - January 6, 2017
+            title: Application Open
+            content: "Bring your ideas and expertise to the Columbus Idea
+              Foundry, and we'll kickstart this event by builing a DIY incubator.
+              Have an idea? Apply now!"
+
+          - datetime: 01/06/2017
+            human_datetime:  January 6 - January 20, 2017
+            title: Voting begins
+            content: "Check out the creative DIY equipment ideas and vote with your dollars to help us
+              fund the purchase of materials and future meet-ups."
+
+          - datetime: 01/26/2017
+            human_datetime: January 26, 2017
+            title: Wrap-up Event
+            content: "We'll get together for the final pitches and tally the votes,
+              and the winners of the competition will be announced."
 
       thank_you:
         thank_you_html: "Thanks a billion! Your gift has helped bring
@@ -92,12 +101,10 @@ en:
       thank_you_email:
         thank_you_html: >
           <p>Dear Community Member,</p>
-          <p>Thank you so much for participating in the BBC IdeaPitch People's
-          Choice Award!</p>
+          <p>Thank you so much for participating in the Cap City Biohackers'
+          DIY Lab Equipment Competition!</p>
           <p>You have donated %{amount} to the Billion Fund, awarding
-          %{project_name} with %{points} point(s). If %{project_name} wins this
-          competition, it will be the cause chosen to receive the fund! The
-          Business Builders Club, along with the entire Billion Team, greatly
+          %{project_name} with %{points} point(s).  The Cap City Biohackers, along with the entire Billion Team, greatly
           appreciate your support.</p>
           <p>With regards,</p>
           <p>The Billion Team</p>
@@ -105,13 +112,12 @@ en:
         thank_you_plain: |
           Dear Community Member,
 
-          Thank you so much for participating in the BBC IdeaPitch People's Choice Award!
+          Thank you so much for participating in the Cap City Biohackers' DIY
+          Lab Equipment Competition!
 
           You have donated %{amount} to the Billion Fund, awarding
-          %{project_name} with %{points} point(s). If %{project_name} wins this
-          competition, it will be the cause chosen to receive the fund! The
-          Business Builders Club, along with the entire Billion Team, greatly
-          appreciate your support.
+          %{project_name} with %{points} point(s). The Cap City Biohackers,
+          along with the entire Billion Team, greatly appreciate your support.
 
           With regards,
           The Billion Team
@@ -153,11 +159,14 @@ en:
               - type: Input
                 label: Contact Information of applicant
                 placeholder: Phone number or email.
+                required: true
 
               - type: Input
                 label: Estimated cost of material
+                required: true
 
               - type: Textarea
                 label: Description
                 help_text: Describe the project, the concept/rationale underlying it, and the expertise of individuals contributing to the project
+                required: true
                 rows: 15
