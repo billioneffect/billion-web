@@ -1,3 +1,32 @@
+class TransactionConstraint
+  def matches?(request)
+    competition.open_donation && !competition.has_feature?(:sms_voting)
+  end
+
+  private
+
+  def competition
+    @competition ||= Competition.current_competition
+  end
+end
+
+class ProjectConstraint
+  def matches?(request)
+    return true unless show_action?(request)
+    competition.has_feature?(:project_page)
+  end
+
+  private
+
+  def show_action?(request)
+    request.method_symbol == :get && request.path.split('/').size == 2
+  end
+
+  def competition
+    @competition ||= Competition.current_competition
+  end
+end
+
 Rails.application.routes.draw do
   get 'leaderboard/index'
 
@@ -23,11 +52,13 @@ Rails.application.routes.draw do
   get '/apply', to: redirect('project_applications/new')
   resources 'project_applications', only: %i(new create)
 
-  resources :projects, only: [:index] do
-    resources :transactions, only: [:new, :create], path: 'donate', constraints: lambda { |request|
-      competition = Competition.current_competition
-      competition.open_donation && !competition.has_feature?(:sms_voting)
-    }
+  resources :projects, only: [:show, :index], constraints: ProjectConstraint.new do
+
+    resources(:transactions,
+      only: [:new, :create],
+      path: 'donate',
+      constraints: TransactionConstraint.new
+    )
   end
 
 
