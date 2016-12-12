@@ -26,18 +26,19 @@
 .project-application-successful {
   text-align: center;
 
-  margin-top: $grid-gutter-width * 3;
+  margin-top: $grid-gutter-width * 4;
   margin-bottom: $grid-gutter-width * 4;
 
   h1 {
     font-weight: bold;
-    font-size: ms(3);
-    line-height: $line-height-computed * 4;
-    margin: 0;
+    font-size: ms(2);
+    line-height: $line-height-computed;
+    margin-top: $line-height-computed;
+    margin-bottom: $line-height-computed * 2;
   }
 
   p {
-    font-size: ms(1);
+    font-size: ms(0);
   }
 
   .home-btn {
@@ -45,7 +46,27 @@
   }
 
   .fa {
-    display: block;
     color: $brand-success;
+    line-height: $line-height-computed * 2;
+  }
+
+  @media only screen and (min-width: $screen-sm) {
+    margin-top: $grid-gutter-width * 8;
+    margin-bottom: $grid-gutter-width * 8;
+
+    h1 {
+      font-weight: bold;
+      font-size: ms(3);
+      line-height: $line-height-computed * 2;
+      margin-bottom: $line-height-computed * 2;
+    }
+
+    p {
+      font-size: ms(1);
+    }
+
+    .home-btn {
+      margin-top: $line-height-computed * 3;
+    }
   }
 }
