@@ -13,7 +13,7 @@ end
 class ProjectConstraint
   def matches?(request)
     return true unless show_action?(request)
-    competition.has_feature?(:profile_page)
+    competition.has_feature?(:project_page)
   end
 
   private
