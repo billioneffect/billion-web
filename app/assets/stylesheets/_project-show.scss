@@ -96,6 +96,7 @@
     }
 
     .project-team-member {
+      margin-bottom: $grid-gutter-width;
 
       .collaborator-name {
         font-size: ms(0);
@@ -107,6 +108,10 @@
         width: 100%;
         border-radius: 50%;
         padding: 0;
+      }
+
+      p {
+        margin: 0;
       }
     }
 

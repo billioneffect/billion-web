@@ -76,20 +76,33 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-12 col-md-7 project-body-markdown">
-          <%= render('project_body_markdown').html_safe %>
+      <%
+        project_scope = "#{competition_scope}.project_page"
+        custom_sidebar_content = t('sidebar_content_html', scope: project_scope, default: '')
+      %>
 
-          <div class='social-sharer social-sharer-footer'>
-            <p><strong>Like this project?</strong> Spread the word!</p>
-            <%= render 'shared/social_sharing' %>
-          </div>
-        </div>
+      <div class="col-xs-12 col-md-7 project-body-markdown">
+        <%= render('project_body_markdown').html_safe %>
 
-        <div class="col-xs-12 col-md-5">
+        <% if @project.collaborators.any? && custom_sidebar_content.present? %>
           <h1>Meet the team</h1>
-
           <%= render @project.collaborators %>
+        <% end %>
+
+        <div class='social-sharer social-sharer-footer'>
+          <p><strong>Like this project?</strong> Spread the word!</p>
+          <%= render 'shared/social_sharing' %>
         </div>
+      </div>
+
+      <div class="col-xs-12 col-md-5">
+        <%= custom_sidebar_content if custom_sidebar_content.present? %>
+
+        <% if @project.collaborators.any? && custom_sidebar_content.blank? %>
+          <h1>Meet the team</h1>
+          <%= render @project.collaborators %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
