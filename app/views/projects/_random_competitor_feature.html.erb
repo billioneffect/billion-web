@@ -8,7 +8,9 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2 project-competitor-content">
-          <div class="project-competitor-title">Check Out Another Project</div>
+          <div class="project-competitor-title">
+            Check Out Another <%= t('projects_title', scope: competition_scope) %>
+          </div>
 
           <div class="project-competitor-name">
             <%= competitor.name %>
