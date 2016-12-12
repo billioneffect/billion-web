@@ -5,10 +5,10 @@ module VoteButtonHelpers
   end
 
   def link_to_vote(project, name = nil, html_options = nil, &block)
-    if project.competition.open_donation
-      if project.competition.has_feature?(:project_page)
-        project_link_only project, name, html_options, &block
-      elsif project.competition.has_feature?(:sms_voting)
+    if project.competition.has_feature?(:project_page)
+      project_link_only project, name, html_options, &block
+    elsif project.competition.open_donation
+      if project.competition.has_feature?(:sms_voting)
         link_with_modal project, name, html_options, &block
       else
         transaction_link_only project, name, html_options, &block
