@@ -62,7 +62,7 @@ describe FormBuilder::Form do
 
   describe 'as_json' do
     it 'includes the type' do
-      expect(FormBuilder::Form.new.as_json).to include(type: "Form")
+      expect(FormBuilder::Form.new.as_json).to include(type: 'Form')
     end
   end
 end

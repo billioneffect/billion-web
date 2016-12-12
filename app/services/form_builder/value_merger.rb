@@ -1,6 +1,5 @@
 module FormBuilder
   class ValueMerger
-
     def initialize(form)
       @form = form
     end
@@ -16,11 +15,11 @@ module FormBuilder
     private
 
     def hash_with_root(hash)
-      hash.has_key?(@form.name) ? hash : { @form.name => hash }
+      hash.key?(@form.name) ? hash : { @form.name => hash }
     end
 
     def hash_without_root(hash)
-      hash.has_key?(@form.name) ? hash[@form.name] : hash
+      hash.key?(@form.name) ? hash[@form.name] : hash
     end
 
     def merge_values(node, value_hash)

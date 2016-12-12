@@ -1,6 +1,9 @@
 module FormBuilder
   class Component
     include ActiveModel::Model
+    include ActiveModel::Validations
+
+    validates :label, presence: true
 
     attr_accessor :name, :label, :help_text, :parent, :required, :value
 
@@ -9,12 +12,11 @@ module FormBuilder
     end
 
     def as_json(options = {})
-      super(options.merge(except: "parent")).merge(type: self.class.name.demodulize)
+      super(options.merge(except: 'parent')).merge(type: self.class.name.demodulize)
     end
 
-    def ==(o)
-      as_json == o.as_json
+    def ==(other)
+      as_json == other.as_json
     end
-
   end
 end
