@@ -5,7 +5,9 @@
     <div class='row'>
       <div class='col-md-12'>
 
-        <%= form_for @form.name, url: project_applications_url do |f| %>
+        <%= form_for @form.name, url: project_applications_url,
+            html: { id: 'new_application' } do |f| %>
+
           <div class='card'>
             <% @form.children.each do |child| %>
               <% case child
@@ -30,3 +32,12 @@
     </div>
   </div>
 </div>
+
+
+<%= content_for :scripts do %>
+  <script>
+$(document).ready(function() {
+  new ApplicationForm('#new_application');
+});
+  </script>
+<% end %>

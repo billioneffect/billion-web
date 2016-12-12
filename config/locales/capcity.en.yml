@@ -148,6 +148,7 @@ en:
             children:
               - type: Input
                 label: Project Title
+                required: true
 
               - type: Input
                 label: Contact Information of applicant
