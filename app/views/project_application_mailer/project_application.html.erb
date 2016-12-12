@@ -1,0 +1,16 @@
+<p>Hi there!</p>
+
+<p>The following application was submitted to your <a href="<%= root_url %>">Billion competition</a>.</p>
+
+<p>
+Best, <br/>
+The Billion team
+</p>
+
+<hr />
+
+<div style='background-color: #eeeeee; padding: 1em'>
+<% @form.children.each do |child| %>
+  <%= render partial: "project_application_mailer/component", locals: { component: child } %>
+<% end %>
+</div>

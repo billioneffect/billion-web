@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#show', id: 'landing'
 
+
   authenticated :user, lambda { |u| u.admin? } do
     namespace :control_panel do
       root 'dashboard#index'
@@ -18,6 +19,10 @@ Rails.application.routes.draw do
 
   post '/subscribe', to: 'subscribe#create', as: 'subscribe'
   resources 'bam_applications', only: [:create]
+
+  get '/apply', to: redirect('project_applications/new')
+  resources 'project_applications', only: %i(new create)
+
   resources :projects, only: [:index] do
     resources :transactions, only: [:new, :create], path: 'donate', constraints: lambda { |request|
       competition = Competition.current_competition

@@ -34,6 +34,13 @@
               </li>
             <% end %>
 
+
+            <% if @competition.competition_config.open_application %>
+              <li>
+                <%= link_to 'Apply', apply_path %>
+              </li>
+            <% end %>
+
             <% if @competition.competition_config.transaction_goal > 0 %>
               <% goal = @competition.competition_config.transaction_goal %>
               <% raised = @competition.total_raised %>

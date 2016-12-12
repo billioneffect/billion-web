@@ -1,0 +1,14 @@
+<div class="form-group">
+  <%= f.label component.name do %>
+    <%= component.label %>
+  <% end %>
+
+  <span class="help-block"><%= help_text component.help_text %></span>
+
+  <%=
+    f.text_area component.name,
+      class: 'form-control',
+      required: component.required,
+      rows: component.rows
+  %>
+</div>
