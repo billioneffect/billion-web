@@ -20,5 +20,32 @@
     background-color: darken($card-background-color, 2%);
     padding: $grid-gutter-width;
   }
+
 }
 
+.project-application-successful {
+  text-align: center;
+
+  margin-top: $grid-gutter-width * 3;
+  margin-bottom: $grid-gutter-width * 4;
+
+  h1 {
+    font-weight: bold;
+    font-size: ms(3);
+    line-height: $line-height-computed * 4;
+    margin: 0;
+  }
+
+  p {
+    font-size: ms(1);
+  }
+
+  .home-btn {
+    margin-top: $line-height-computed * 3;
+  }
+
+  .fa {
+    display: block;
+    color: $brand-success;
+  }
+}
