@@ -15,7 +15,15 @@
 
       <div class='col-md-4'>
         <div class='question-group-help'>
-          <%= help_text component.help_text %>
+          <% if component.help_text_title.present? %>
+            <div class='question-group-help-title'>
+              <%= help_text component.help_text_title %>
+            </div>
+          <% end %>
+
+          <div class='question-group-help-content'>
+            <%= help_text component.help_text %>
+          </div>
         </div>
       </div>
     </div>

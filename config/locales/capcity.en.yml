@@ -129,26 +129,26 @@ en:
         children:
           - type: Group
             label: Tell us about your project
-            help_text: |
-              <strong>Here are some ideas to get you started!</strong>
+            help_text_title: Here are some ideas to get you started!
+            help_text: >
               <ul>
-              <li>Incubator (with or without shaking)</li>
-              <li>Waterbath</li>
-              <li>Gel electrophoresis box with power source</li>
-              <li>Centrifuge</li>
-              <li>PCR machine</li>
-              <li>Pipettes</li>
-              <li>Microscope</li>
-              <li>Refrigerator</li>
-              <li>Freezer</li>
-              <li>Balance</li>
-              <li>ph Meter</li>
-              <li>Vacuum pump</li>
-              <li>UV box</li>
-              <li>Western developer</li>
-              <li>Basic hardware (ie. tuberacks)</li>
-              <li>Heat block (with or without shaking)</li>
-              <li>Platform rockers</li>
+                <li>Incubator (with or without shaking)</li>
+                <li>Waterbath</li>
+                <li>Gel electrophoresis box with power source</li>
+                <li>Centrifuge</li>
+                <li>PCR machine</li>
+                <li>Pipettes</li>
+                <li>Microscope</li>
+                <li>Refrigerator</li>
+                <li>Freezer</li>
+                <li>Balance</li>
+                <li>ph Meter</li>
+                <li>Vacuum pump</li>
+                <li>UV box</li>
+                <li>Western developer</li>
+                <li>Basic hardware (ie. tuberacks)</li>
+                <li>Heat block (with or without shaking)</li>
+                <li>Platform rockers</li>
               </ul>
 
             children:
