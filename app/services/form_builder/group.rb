@@ -1,6 +1,6 @@
 module FormBuilder
   class Group < Form
-    attr_accessor :label, :parent, :help_text
+    attr_accessor :label, :parent, :help_text, :help_text_title
 
     validates :label, presence: true
 
