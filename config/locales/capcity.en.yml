@@ -13,23 +13,24 @@ en:
       ]
 
       heading_html: "<span class=\"large\">Choose your favorite ideas at the<br/>
-        <strong>Cap City Lab Equipment Hack</strong>"
+        <strong>Cap City BioHackers Lab Equipment Hack</strong>"
 
       how_it_works:
-        heading: Vote for your favorite DIY equipment idea.
+        heading: Vote for your favorite DIY equipment idea
         step_1:
           title: Check out our projects
-          content: "See the creative ideas to take off-the-shelf parts and turn
-            it into essentials equipments in a biologist's toolbox."
+          content: "Check out or submit creative ideas to take off-the-shelf
+            parts and turn them into essential equipment in a biologist's
+            toolbox."
         step_2:
           title: Vote for your favorite
           content: "Let us know which projects are your favorite by voting with
             your dollars. The money raised will be used to purchase materials and
             support future meet-ups."
         step_3:
-          title: Hack on the equipments
+          title: Hack on the equipment
           content: "Once the votes are tallied, we'll begin tackling the most
-            popular projects and stock our labs with DIY equipments rivaling that
+            popular projects and stock our labs with DIY equipment rivaling that
             of professional laboratories."
 
       projects_preview:
@@ -78,7 +79,7 @@ en:
             human_datetime: December 13 - January 6, 2017
             title: Application Open
             content: "Bring your ideas and expertise to the Columbus Idea
-              Foundry, and we'll kickstart this event by builing a DIY incubator.
+              Foundry, and we'll kickstart this event by building a DIY incubator.
               Have an idea? Apply now!"
 
           - datetime: 01/06/2017
@@ -90,7 +91,7 @@ en:
           - datetime: 01/26/2017
             human_datetime: January 26, 2017
             title: Wrap-up Event
-            content: "We'll get together for the final pitches and tally the votes,
+            content: "We'll get together for the final pitches, tally the votes,
               and the winners of the competition will be announced."
 
       thank_you:
@@ -102,10 +103,11 @@ en:
         thank_you_html: >
           <p>Dear Community Member,</p>
           <p>Thank you so much for participating in the Cap City Biohackers'
-          DIY Lab Equipment Competition!</p>
+          DIY Lab Equipment Hack!</p>
           <p>You have donated %{amount} to the Billion Fund, awarding
-          %{project_name} with %{points} point(s).  The Cap City Biohackers, along with the entire Billion Team, greatly
-          appreciate your support.</p>
+          %{project_name} with %{points} point(s). The Cap City Biohackers,
+          along with the entire Billion Team, greatly appreciate your
+          support.</p>
           <p>With regards,</p>
           <p>The Billion Team</p>
           <p>Please feel free to reply to this email with questions, comments, or feedback.</p>
@@ -113,7 +115,7 @@ en:
           Dear Community Member,
 
           Thank you so much for participating in the Cap City Biohackers' DIY
-          Lab Equipment Competition!
+          Lab Equipment Hack!
 
           You have donated %{amount} to the Billion Fund, awarding
           %{project_name} with %{points} point(s). The Cap City Biohackers,
@@ -129,26 +131,26 @@ en:
         children:
           - type: Group
             label: Tell us about your project
-            help_text: |
-              <strong>Here are some ideas to get you started!</strong>
+            help_text_title: Here are some ideas to get you started!
+            help_text: >
               <ul>
-              <li>Incubator (with or without shaking)</li>
-              <li>Waterbath</li>
-              <li>Gel electrophoresis box with power source</li>
-              <li>Centrifuge</li>
-              <li>PCR machine</li>
-              <li>Pipettes</li>
-              <li>Microscope</li>
-              <li>Refrigerator</li>
-              <li>Freezer</li>
-              <li>Balance</li>
-              <li>ph Meter</li>
-              <li>Vacuum pump</li>
-              <li>UV box</li>
-              <li>Western developer</li>
-              <li>Basic hardware (ie. tuberacks)</li>
-              <li>Heat block (with or without shaking)</li>
-              <li>Platform rockers</li>
+                <li>Incubator (with or without shaking)</li>
+                <li>Waterbath</li>
+                <li>Gel electrophoresis box with power source</li>
+                <li>Centrifuge</li>
+                <li>PCR machine</li>
+                <li>Pipettes</li>
+                <li>Microscope</li>
+                <li>Refrigerator</li>
+                <li>Freezer</li>
+                <li>Balance</li>
+                <li>ph Meter</li>
+                <li>Vacuum pump</li>
+                <li>UV box</li>
+                <li>Western developer</li>
+                <li>Basic hardware (ie. tuberacks)</li>
+                <li>Heat block (with or without shaking)</li>
+                <li>Platform rockers</li>
               </ul>
 
             children:

@@ -16,8 +16,16 @@
     }
   }
 
-  .question-group-help {
-    background-color: darken($card-background-color, 2%);
+  .question-group-help-title {
+    background-color: lighten($orange, 15%);
+    font-weight: bold;
+  }
+
+  .question-group-help-content {
+    background-color: lighten($orange, 20%);
+  }
+
+  .question-group-help-title, .question-group-help-content {
     padding: $grid-gutter-width;
   }
 
