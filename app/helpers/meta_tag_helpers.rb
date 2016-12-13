@@ -43,14 +43,19 @@ module MetaTagHelpers
     end
   end
 
-  # Define meta data
+  meta_helper :title,
+    default: -> {
+      I18n.t("#{competition_scope}.meta.default_title", default: 'meta.default_title'.to_sym)
+    },
+    formatter: ->(title) { "#{title} | Billion" }
 
-  meta_helper :title, default:   I18n.t('meta.default_title'),
-                      formatter: ->(title) { "#{title} | Billion" }
+  meta_helper :description, default: -> {
+    I18n.t("#{competition_scope}.meta.default_description", default: 'meta.default_description'.to_sym)
+  }
 
-  meta_helper :description, default: I18n.t('meta.default_description')
-
-  meta_helper :image, default: -> { image_url('share-image.png') }
+  meta_helper :image, default: -> {
+    I18n.t("#{competition_scope}.meta.default_image_url", default: image_url('share-image.png'))
+  }
 
   meta_helper :canonical, default: -> { request.original_url }
 end

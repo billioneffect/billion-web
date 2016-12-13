@@ -1,6 +1,13 @@
 en:
   competition_copy:
     capcity:
+      meta:
+        default_title: Cap City Biohackers DIY Lab Equipment Competition
+        default_description: "We’re launching an application to build DIY
+          equipment for our new space! Apply and vote with your dollars on your
+          favorite one today!"
+        default_image_url: https://s3.amazonaws.com/billioneffect/images/capcity/cap-city-fb.png
+
       title: Cap City BioHackers
       projects_title: project
       fund_name: Billion Fund

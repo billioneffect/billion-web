@@ -8,4 +8,5 @@ module ApplicationHelper
   def competition_scope
     "competition_copy.#{@competition.code_name.parameterize.underscore}"
   end
+
 end
