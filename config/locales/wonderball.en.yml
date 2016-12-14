@@ -4,6 +4,7 @@ en:
       meta:
         default_title: CMA Wonderball Cocktail Competition
         default_description: Wonderball attendees! Vote with your dollars on your favorite cocktail drink today! Top drink will be provided at the event and proceeds go towards CMA!
+        default_image_url: https://s3.amazonaws.com/billioneffect/images/wonderball/cmoa-fb.png
 
       title: CMA Wonderball Cocktail Competition
       projects_title: cocktail
