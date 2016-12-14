@@ -241,6 +241,7 @@ en:
 
       thank_you_email:
         thank_you_html: >
+          <img src="https://s3.amazonaws.com/billioneffect/images/wonderball/wonderball.gif" />
           <p>Dear Community Member,</p>
           <p>Thank you so much for participating in the CMA Wonderball Cocktail
           Competition!</p>
