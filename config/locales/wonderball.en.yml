@@ -254,6 +254,11 @@ en:
           columbusmuseum.org/wonderball</a>.</p>
           <p>With regards,</p>
           <p>The Billion and CMA Wonderball Teams</p>
+
+          <p>Love this project? Share your votes!<br />
+          %{social_sharing_buttons}
+          </p>
+
           <p>Please feel free to reply to this email with questions, comments,
           or feedback.</p>
           <p><strong>Please retain this information for your tax purposes. Your

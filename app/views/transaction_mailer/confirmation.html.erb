@@ -4,11 +4,16 @@
   amount = number_to_currency @purchase.amount
   project_name = @transaction.recipient.name
   points = number_with_delimiter @transaction.points
+  social_sharing_buttons = render(partial: 'transaction_mailer/social_sharing_icons',
+                                  locals: {
+                                    url: project_url(@transaction.recipient)
+                                  })
 %>
 
 <%= t('thank_you_email.thank_you_html',
       scope: competition_scope,
       amount: amount,
       project_name: project_name,
-      points: points)
+      points: points,
+      social_sharing_buttons: social_sharing_buttons)
 %>
