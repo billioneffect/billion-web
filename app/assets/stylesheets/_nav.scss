@@ -3,20 +3,64 @@
   margin-bottom: 0;
   border-width: 0;
 
+  .navbar-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .navbar-brand {
+    flex-grow: 1;
+  }
+
   .composite-logo {
     height: $line-height-computed;
     line-height: $line-height-computed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
     .logo {
-      border-right: 1px solid $brand-primary;
       padding-right: $grid-gutter-width / 2;
-      vertical-align: middle;
-      position: relative;
-      top: -25%;
+      align-self: center;
     }
+
     .tenant {
       padding-left: $grid-gutter-width / 2;
-      font-size: ms(1);
+      align-self: center;
+      border-left: 1px solid transparentize($brand-primary, 0.5);
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
+
+    @mixin tenant-name-small {
+      font-size: ms(0);
+      font-weight: 600;
+    }
+
+    @mixin tenant-name-large {
+      font-size: ms(1);
+      font-weight: normal;
+    }
+
+    .tenant-name {
+      line-height: 1.2;
+      @include tenant-name-small;
+
+      // Tenant name is smaller at small screen sizes,
+      // larger at large screen sizes
+
+      @media (min-size: $screen-md) {
+        @include tenant-name-large;
+      }
+    }
+
+    // Use this class to force tenant name to always be large
+    .tenant-name-large {
+      @include tenant-name-large;
+    }
+
   }
 
   .logo {
