@@ -23,6 +23,8 @@ class ProjectApplicationsController < ApplicationController
   def set_form
     application_form_description = I18n.t("application_form", scope: competition_scope)
     @form = FormBuilder::Form.new(application_form_description)
+    Rails.logger.debug @form.inspect
+
     @merger = FormBuilder::ValueMerger.new @form
 
   end

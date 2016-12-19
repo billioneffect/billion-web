@@ -1,10 +1,17 @@
 
+// Not sure why this is not picked up here even though it is imported in
+// application.scss
+@import "font-awesome/variables";
+@import "font-awesome/mixins";
+@import "font-awesome/icons";
+
 .project-application {
   margin-top: $grid-gutter-width * 2;
   margin-bottom: $grid-gutter-width * 2;
 
   .question-group {
     border-bottom: none;
+    margin-bottom: $line-height-computed;
   }
 
   .application-actions {
@@ -14,6 +21,28 @@
     button {
       padding: 1em 2em;
     }
+  }
+
+  .question-subgroup:last-child {
+    margin-bottom: 0;
+  }
+
+  .question-subgroup-title {
+    font-weight: bold;
+    font-size: ms(0);
+    color: $text-color;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .question-subgroup-help {
+    font-weight: normal;
+    font-size: ms(0);
+    color: $text-color;
+  }
+
+  .question-subgroup-body .form-group:first-child {
+    margin-top: $grid-gutter-width;
   }
 
   .question-group-help-title {
@@ -27,6 +56,27 @@
 
   .question-group-help-title, .question-group-help-content {
     padding: $grid-gutter-width;
+  }
+
+  .group-toggle {
+    color: inherit;
+    text-decoration: inherit;
+
+    &::before {
+      @include fa-icon();
+      display: inline-block;
+      font-size: 0.75em;
+      margin-right: $grid-gutter-width / 2;
+      vertical-align: middle;
+      position: relative;
+      top: -0.12em;
+      content: $fa-var-chevron-down;
+      width: 1em;
+    }
+
+    &.collapsed::before {
+      content: $fa-var-chevron-right;
+    }
   }
 
 }
