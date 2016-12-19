@@ -178,3 +178,117 @@ en:
           over 300 works of art this past year through the Museum’s Community
           Connections program.</p>
 
+      application_form:
+        name: 'application'
+        children:
+          - type: Group
+            label: Tell us about yourself
+            collapsible: true
+            children:
+              - type: Subgroup
+                label: Team Member 1
+                collapsible: true
+                children:
+                  - type: Input
+                    label: Name
+                    required: true
+                  - type: Input
+                    label: School
+                    required: true
+                  - type: Input
+                    label: Major
+                    required: true
+                  - type: Input
+                    label: LinkedIn profile (optional)
+
+              - type: Subgroup
+                label: Team Member 2 (optional)
+                collapsible: true
+                expanded: false
+                children:
+                  - type: Input
+                    label: Name
+                    required: true
+                  - type: Input
+                    label: School
+                    required: true
+                  - type: Input
+                    label: Major
+                    required: true
+                  - type: Input
+                    label: LinkedIn profile (optional)
+
+              - type: Subgroup
+                label: Team Member 3 (optional)
+                collapsible: true
+                expanded: false
+                children:
+                  - type: Input
+                    label: Name
+                    required: true
+                  - type: Input
+                    label: School
+                    required: true
+                  - type: Input
+                    label: Major
+                    required: true
+                  - type: Input
+                    label: LinkedIn profile (optional)
+
+              - type: Subgroup
+                label: Team Member 4 (optional)
+                collapsible: true
+                expanded: false
+                children:
+                  - type: Input
+                    label: Name
+                    required: true
+                  - type: Input
+                    label: School
+                    required: true
+                  - type: Input
+                    label: Major
+                    required: true
+                  - type: Input
+                    label: LinkedIn profile (optional)
+
+          - type: Group
+            label: Tell us about your project
+            collapsible: true
+            expanded: false
+            children:
+              - type: Textarea
+                label: What social issue are you trying to solve?
+                rows: 8
+                required: true
+
+              - type: Textarea
+                label: What is your social enterprise's product or service?
+                rows: 8
+                required: true
+
+              - type: Textarea
+                label: Who will benefit from your social enterprise?
+                rows: 8
+                required: true
+
+              - type: Textarea
+                label: Who is your target market and how have you validated your idea?
+                rows: 8
+                required: true
+
+              - type: Textarea
+                label: What are the other organizations/enterprises working on this social/community issue?
+                rows: 8
+                required: true
+
+              - type: Textarea
+                label: How is your work complementary to and/or different from others?
+                rows: 8
+                required: true
+
+              - type: Input
+                label: Video
+                help_text: Please give a 30-second elevator pitch to describe your social enterprise’s product or service in detail.
+                placeholder: http://youtube.com/...
+                required: true
