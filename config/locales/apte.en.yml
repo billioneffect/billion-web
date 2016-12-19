@@ -1,0 +1,180 @@
+en:
+  competition_copy:
+    apte:
+      meta:
+        default_title: APTE Business Competition
+        default_description: Apply now for the APTE Business Competition for the chance to $1000 in prizes!
+        default_image_url: https://s3.amazonaws.com/billioneffect/images/wonderball/cmoa-fb.png
+
+      title: APTE Business Competition
+      projects_title: business plan
+      fund_name: Billion Fund
+
+      links: [
+        {
+          text: "APTE Summit",
+          url: "http://www.aptesummit.org/"
+        }
+      ]
+
+      heading_html: "<span class=\"large\">Choose your favorite student pitch
+        at the<br /><strong>APTE Business Competition</strong></span>"
+      heading_image: apte.JPG
+
+      how_it_works:
+        heading: Vote for your favorite business plan
+        step_1:
+          title: Check out the business plans
+          content: "See the most innovative, sustainable, and impactful student
+            solutions to our most pressing social issues at the 2017 APTE
+            Business Competition"
+        step_2:
+          title: Vote for your favorite
+          content: "While the judges are deliberating, help your favorite teams
+            win the People's Choice Award by voting with your dollar, online or
+            at the event."
+        step_3:
+          title: People's Choice Award
+          content: "The team that raises the most money wins the People's
+            Choice Award and will receive the Billion Fund - all of the money
+            raised during the event."
+
+      projects_preview:
+        subheading: Who would you like to see winning the People's Choice Award?
+
+      competition_details:
+        heading: 2017 APTE Summit
+        subheading: "Where change-makers and social entrepreneurs come together"
+        image_path: apte_summit.jpg
+        image_css: |
+          .landing-gbh .gbh-logo img {
+            width: 80% !important;
+          }
+
+          @media (min-width: 992px) {
+            .landing-gbh .gbh-logo img {
+              margin-top: 0em !important;
+            }
+          }
+        sections:
+          - title: The Summit
+            content: "The Alleviating Poverty Through Entrepreneurship (APTE)
+              summit is an annual event organized by OSU students and attended
+              by 1000+ community members and change-makers. The summit brings
+              together social entrepreneurs from around the world to share
+              their insight on social enterprise, giving students and others
+              the opportunity to learn, network, and collaborate."
+          - title: The Business Competition
+            content: "To encourage students to pursue action on social
+              enterprise, APTE has launched a student business competition.
+              This competition will consist of a five minute pitch and a ten
+              minute Q&A session with judges to be announced later. The
+              business competition is open to both undergraduate and graduate
+              students. <a href='/apply'><strong>Apply now for the chance to
+              earn $1,000 in seed funding!</strong></a>"
+
+      timeline:
+        events:
+          - datetime: 12/15/2016
+            human_datetime: December 15
+            title: Application Opens
+            content: "Business Competition Applications are open! Apply above
+              for a chance to earn seed funding!"
+          - datetime: 1/15/2017
+            human_datetime: January 15
+            title: Application Deadline
+            content: "Business Competition Applications are closed and will be
+              reviewed by the APTE leadership team."
+          - datetime: 1/28/2017
+            human_datetime: January 28
+            title: Applicants Selected
+            content: "The top 3 business plans will be selected to pitch in
+              front of 1000+ community members at the APTE Summit!"
+          - datetime: 1/28/2017
+            human_datetime: January 28
+            title: 2017 APTE Summit
+            content: "Listen to global leaders in social entrepreneurship give
+              talks and fellow students present their business plans."
+
+      thank_you:
+        thank_you_html: "Thanks a billion! Your gift has helped bring
+          <span class=\"thank-you-project-name\"><strong>%{project_name}</strong>
+          </span>one step closer to being awarded the Billion Fund"
+
+      thank_you_email:
+        thank_you_html: >
+          <img src="https://s3.amazonaws.com/billioneffect/images/wonderball/wonderball.gif" />
+          <p>Dear Community Member,</p>
+          <p>Thank you so much for participating in the CMA Wonderball Cocktail
+          Competition!</p>
+          <p>You have donated %{amount} to the Billion Fund, awarding
+          %{project_name} with %{points} point(s). If %{project_name} wins this
+          competition, it will be featured drink at the 2017 Wonderball event
+          on Saturday, January 28! For more information on Wonderball, visit
+          <a href="http://www.columbusmuseum.org/wonderball/">
+          columbusmuseum.org/wonderball</a>.</p>
+          <p>With regards,</p>
+          <p>The Billion and CMA Wonderball Teams</p>
+
+          <p>Love this project? Share your votes!<br />
+          %{social_sharing_buttons}
+          </p>
+
+          <p>Please feel free to reply to this email with questions, comments,
+          or feedback.</p>
+          <p><strong>Please retain this information for your tax purposes. Your
+          contribution to the Columbus Museum of Art is fully deductible to the
+          extent allowed by law.</strong></p>
+        thank_you_plain: |
+          Dear Community Member,
+
+          Thank you so much for participating in the CMA Wonderball Cocktail
+          Competition!
+
+          You have donated %{amount} to the Billion Fund, awarding
+          %{project_name} with %{points} point(s). If %{project_name} wins this
+          competition, it will be featured drink at the 2017 Wonderball event
+          on Saturday, January 28! For more information on Wonderball, visit
+          columbusmuseum.org/wonderball.
+
+          With regards,
+
+          The Billion and CMA Wonderball Teams
+
+          Please feel free to reply to this email with questions, comments, or
+          feedback.
+
+          Please retain this information for your tax purposes. Your
+          contribution to the Columbus Museum of Art is fully deductible to the
+          extent allowed by law.
+
+      project_page:
+        sidebar_content_html: >
+          <h1>Wonderball Supports Creativity</h1>
+          <p>At the Columbus Museum of Art, we believe that creativity is for
+          everyone. The JPMorgan Chase Center for Creativity empowers the
+          imagination and gives opportunities for visitors of all ages to
+          broaden their artistic horizons. Here, creativity is fostered,
+          cultivated, championed, and celebrated.</p>
+
+          <h4><strong>FOSTER</strong></h4>
+          <p>SURGE: Teen Open Studio is a free drop-in program offering teens
+            an open space to connect with peers and explore their
+            interests.</p>
+
+          <h4><strong>CULTIVATE</strong></h4>
+          <p>Imagine That is a partnership with local Head Starts where
+          Columbus Museum of Art collaborates with teachers in their classrooms
+          to provide imaginative experiences for over 450 children each
+          year.</p>
+
+          <h4><strong>CHAMPION</strong></h4>
+          <p>Columbus Museum of Art partners with creative people in our
+          community to present intriguing and memorable experiences for
+          visitors through the Connector Series.</p>
+
+          <h4><strong>CELEBRATE</strong></h4>
+          <p>Adults living with cognitive disabilities collectively created
+          over 300 works of art this past year through the Museum’s Community
+          Connections program.</p>
+
