@@ -71,27 +71,23 @@ en:
               minute Q&A session with judges to be announced later. The
               business competition is open to both undergraduate and graduate
               students. <a href='/apply'><strong>Apply now for the chance to
-              earn $1,000 in seed funding!</strong></a>"
+              earn $1,000 in seed funding for the winner and $500 for the crowd
+              favorite!</strong></a>"
 
       timeline:
         events:
-          - datetime: 12/15/2016
-            human_datetime: December 15
+          - datetime: 01/09/2017
+            human_datetime: January 9
             title: Application Opens
             content: "Business Competition Applications are open! Apply above
               for a chance to earn seed funding!"
-          - datetime: 1/15/2017
-            human_datetime: January 15
+          - datetime: 03/20/2017
+            human_datetime: March 15
             title: Application Deadline
             content: "Business Competition Applications are closed and will be
               reviewed by the APTE leadership team."
-          - datetime: 1/28/2017
-            human_datetime: January 28
-            title: Applicants Selected
-            content: "The top 3 business plans will be selected to pitch in
-              front of 1000+ community members at the APTE Summit!"
-          - datetime: 1/28/2017
-            human_datetime: January 28
+          - datetime: 04/08/2017
+            human_datetime: April 8
             title: 2017 APTE Summit
             content: "Listen to global leaders in social entrepreneurship give
               talks and fellow students present their business plans."
@@ -183,6 +179,18 @@ en:
         children:
           - type: Group
             label: Tell us about yourself
+            help_text_title: "Additional Requirements:"
+            help_text: >
+              <p>Please email a short pitch deck with your name and project
+              name to <strong>mdecaris1@gmail.com</strong></p>
+              <p>The pitch deck should include the following content:</p>
+              <ol>
+                <li>Problem</li>
+                <li>Solution</li>
+                <li>Action Steps</li>
+              </ol>
+              <p>Please feel free to reach out to Maria (email above) with any
+              questions you may have!</p>
             collapsible: true
             children:
               - type: Subgroup
