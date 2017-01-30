@@ -92,11 +92,11 @@ $border-radius-base: 0;
 $border-radius-large: $border-radius-base;
 $border-radius-small: $border-radius-base;
 
-$padding-base-vertical: ms(-1);
-$padding-base-horizontal: ms(3);
+$padding-base-vertical: $line-height-computed / 4;
+$padding-base-horizontal: $grid-gutter-width / 2;
 
-$padding-large-vertical: ms(1);
-$padding-large-horizontal: ms(4);
+$padding-large-vertical: $line-height-computed;
+$padding-large-horizontal: $grid-gutter-width * 2;
 
 
 

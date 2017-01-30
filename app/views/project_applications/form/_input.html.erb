@@ -2,11 +2,15 @@
   <%= f.label component.name do %>
     <%= component.label %>
   <% end %>
+
+  <% if component.help_text.present? %>
+    <span class="help-block"><%= help_text component.help_text %></span>
+  <% end %>
+
   <%=
     f.text_field component.name,
       class: 'form-control',
       required: component.required,
       placeholder: component.placeholder
   %>
-  <span class="help-block"><%= help_text component.help_text %></span>
 </div>

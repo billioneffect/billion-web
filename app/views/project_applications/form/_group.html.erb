@@ -1,9 +1,22 @@
 <div class='question-group'>
   <div class='question-group-title card-header'>
-    <%= component.label %>
+    <% if component.collapsible %>
+      <a class='group-toggle'
+        role="button"
+        data-toggle="collapse"
+        href="#<%= component.name %>"
+        aria-expanded="<%= component.expanded %>"
+        aria-controls="<%= component.name %>">
+
+        <%= component.label %>
+
+      </a>
+    <% else %>
+      <%= component.label %>
+    <% end %>
   </div>
 
-  <div class='card-body'>
+  <div class='card-body collapse <%= 'in' if component.expanded %>' id=<%= component.name %>>
     <div class='row'>
       <div class='col-md-8'>
         <%= f.fields_for component.name do |group_form| %>
@@ -14,17 +27,19 @@
       </div>
 
       <div class='col-md-4'>
-        <div class='question-group-help'>
-          <% if component.help_text_title.present? %>
-            <div class='question-group-help-title'>
-              <%= help_text component.help_text_title %>
-            </div>
-          <% end %>
+        <% if component.help_text.present? %>
+          <div class='question-group-help'>
+            <% if component.help_text_title.present? %>
+              <div class='question-group-help-title'>
+                <%= help_text component.help_text_title %>
+              </div>
+            <% end %>
 
-          <div class='question-group-help-content'>
-            <%= help_text component.help_text %>
+            <div class='question-group-help-content'>
+              <%= help_text component.help_text %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
