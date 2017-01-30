@@ -13,9 +13,7 @@ module FormBuilder
     def add(child)
       child = instantiate_child(child) if child.is_a? Hash
 
-      if !child.is_a?(Component) && !child.is_a?(Group)
-        fail "Child must be a group or a component, got #{child.class}"
-      end
+      validate_child!(child)
 
       child.parent = self
 
@@ -32,6 +30,12 @@ module FormBuilder
     end
 
     private
+
+    def validate_child!(child)
+      if !child.is_a?(Component) && !child.is_a?(Group)
+        fail "Child must be a group or a component, got #{child.class}"
+      end
+    end
 
     def instantiate_child(hash)
       klass = "FormBuilder::#{hash[:type]}".safe_constantize

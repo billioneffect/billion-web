@@ -1,0 +1,28 @@
+<fieldset class='question-subgroup form-group'>
+  <legend class='question-subgroup-title'>
+    <% if component.collapsible %>
+      <a class='group-toggle'
+        role="button"
+        data-toggle="collapse"
+        href="#<%= component.name %>"
+        aria-expanded="<%= component.expanded %>"
+        aria-controls="<%= component.name %>">
+
+        <%= component.label %>
+      </a>
+    <% else %>
+      <%= component.label %>
+    <% end %>
+    <div class='question-subgroup-help'>
+      <small><%= component.help_text %></small>
+    </div>
+  </legend>
+
+  <%= f.fields_for component.name do |group_form| %>
+    <div class='question-subgroup-body collapse <%= 'in' if component.expanded %>' id='<%= component.name %>'>
+      <% component.children.each do |child| %>
+        <%= render partial: component_partial(child), locals: { f: group_form, component: child } %>
+      <% end %>
+    </div>
+  <% end %>
+</fieldset>
