@@ -19,10 +19,8 @@
       </div>
     </div>
     <div class='row'>
-      <% projects.each do |project| %>
-      <div class='col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-3'>
+      <%= layout_projects(projects) do |project| %>
         <%= render partial: 'shared/project_card', locals: { project: project } %>
-      </div>
       <% end %>
     </div>
 
