@@ -4,7 +4,7 @@ en:
       meta:
         default_title: APTE Business Competition
         default_description: Apply now for the APTE Business Competition for the chance to $1000 in prizes!
-        default_image_url: https://s3.amazonaws.com/billioneffect/images/wonderball/cmoa-fb.png
+        default_image_url: https://s3.amazonaws.com/billioneffect/images/APTE/apte.png
 
       title: APTE Business Competition
       projects_title: business plan
@@ -293,10 +293,4 @@ en:
               - type: Textarea
                 label: How is your work complementary to and/or different from others?
                 rows: 8
-                required: true
-
-              - type: Input
-                label: Video
-                help_text: Please give a 30-second elevator pitch to describe your social enterprise’s product or service in detail.
-                placeholder: http://youtube.com/...
                 required: true
