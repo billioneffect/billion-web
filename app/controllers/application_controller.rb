@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper MetaTagHelpers
   helper VoteButtonHelpers
   helper ProgressBarHelpers
+  helper LandingCardLayoutHelpers
   before_action :set_competition
 
   # Prevent CSRF attacks by raising an exception.

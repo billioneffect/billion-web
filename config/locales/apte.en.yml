@@ -99,50 +99,34 @@ en:
 
       thank_you_email:
         thank_you_html: >
-          <img src="https://s3.amazonaws.com/billioneffect/images/wonderball/wonderball.gif" />
           <p>Dear Community Member,</p>
-          <p>Thank you so much for participating in the CMA Wonderball Cocktail
-          Competition!</p>
+          <p>Thank you so much for supporting the APTE Business Competition!</p>
           <p>You have donated %{amount} to the Billion Fund, awarding
-          %{project_name} with %{points} point(s). If %{project_name} wins this
-          competition, it will be featured drink at the 2017 Wonderball event
-          on Saturday, January 28! For more information on Wonderball, visit
-          <a href="http://www.columbusmuseum.org/wonderball/">
-          columbusmuseum.org/wonderball</a>.</p>
+          %{project_name} with %{points} point(s).The APTE team, along with the
+          entire Billion team, greatly appreciate your support.</p>
           <p>With regards,</p>
-          <p>The Billion and CMA Wonderball Teams</p>
+          <p>The Billion Team</p>
 
           <p>Love this project? Share your votes!<br />
-          %{social_sharing_buttons}
           </p>
 
           <p>Please feel free to reply to this email with questions, comments,
           or feedback.</p>
-          <p><strong>Please retain this information for your tax purposes. Your
-          contribution to the Columbus Museum of Art is fully deductible to the
-          extent allowed by law.</strong></p>
         thank_you_plain: |
           Dear Community Member,
 
-          Thank you so much for participating in the CMA Wonderball Cocktail
-          Competition!
+          Thank you so much for supporting the APTE Business Competition!
 
           You have donated %{amount} to the Billion Fund, awarding
-          %{project_name} with %{points} point(s). If %{project_name} wins this
-          competition, it will be featured drink at the 2017 Wonderball event
-          on Saturday, January 28! For more information on Wonderball, visit
-          columbusmuseum.org/wonderball.
+          %{project_name} with %{points} point(s). The APTE team, along with
+          the entire Billion team, greatly appricate your support.
 
           With regards,
 
-          The Billion and CMA Wonderball Teams
+          The Billion Team
 
           Please feel free to reply to this email with questions, comments, or
           feedback.
-
-          Please retain this information for your tax purposes. Your
-          contribution to the Columbus Museum of Art is fully deductible to the
-          extent allowed by law.
 
       project_page:
         sidebar_content_html: >

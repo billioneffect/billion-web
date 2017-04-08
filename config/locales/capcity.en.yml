@@ -83,20 +83,21 @@ en:
       timeline:
         events:
           - datetime: 12/13/2016
-            human_datetime: December 13 - January 6, 2017
+            human_datetime: December 13 - January 30, 2017
             title: Application Open
             content: "Bring your ideas and expertise to the Columbus Idea
-              Foundry, and we'll kickstart this event by building a DIY incubator.
-              Have an idea? Apply now!"
+              Foundry, and we'll kickstart this event by building a DIY
+              incubator. Have an idea? Apply now!"
 
-          - datetime: 01/06/2017
-            human_datetime:  January 6 - January 20, 2017
+          - datetime: 01/30/2017
+            human_datetime: January 30 - February 13, 2017
             title: Voting begins
-            content: "Check out the creative DIY equipment ideas and vote with your dollars to help us
-              fund the purchase of materials and future meet-ups."
+            content: "Check out the creative DIY equipment ideas and vote with
+              your dollars to help us fund the purchase of materials and future
+              meet-ups."
 
-          - datetime: 01/26/2017
-            human_datetime: January 26, 2017
+          - datetime: 02/13/2017
+            human_datetime: February 13, 2017
             title: Wrap-up Event
             content: "We'll get together for the final pitches, tally the votes,
               and the winners of the competition will be announced."
