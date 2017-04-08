@@ -52,7 +52,8 @@ Rails.application.routes.draw do
   get '/apply', to: redirect('project_applications/new')
   resources 'project_applications', only: %i(new create)
 
-  resources :projects, only: [:show, :index], constraints: ProjectConstraint.new do
+  resources :projects, only: [:index]
+  resources :projects, only: [:show], constraints: ProjectConstraint.new do
 
     resources(:transactions,
       only: [:new, :create],
